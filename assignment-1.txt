@@ -1,0 +1,43 @@
+home.html
+----------------------
+<html>
+<frameset rows="25%,*">
+<frame src=a.html name="f1">
+<frameset cols="15%,*">
+<frame src=c.html name="f3">
+<frame src=h.html name="f4">
+</html>  
+----------------------------------------
+c.html
+------------
+<html>
+<body>
+<a href="d.html"  target=f4>LOGIN</a><br><br>
+<a href="register.html" target=f4>REGISTER</a><br><br>
+<a href="admission.html" target="f4">ADMISSION</a><br><br>
+<a href="timetable.html" target="f4">TIME-TABLE</a><br><br>
+<a href="contactus.html" target="f4">CONTACT US</a><br><br>
+</body>
+</html> 
+------------------------------------------
+a.html
+----------------
+<html>
+<body bgcolor=black>
+<h1><center><font color=white>WELCOME TO HTML AT MPHASIS</center></h1><hr>
+</body>
+</html> 
+--------------------------------------------------------------------
+d.html
+---------------
+<html>
+<body bgcolor=pink> 
+<form>
+<img src="123.jpg" alt="sorry image not available" height="180" width="200" align="right" />
+<table>
+<tr><td>username<td><input type="text" name="t1" size=20 /></tr>
+<tr><td>password<td><input type="text" name="t2" size=20 /></tr>
+<tr><td><input type="submit" value="submit" /></tr>
+</table>
+</form>
+-------------------------------------------------------------
