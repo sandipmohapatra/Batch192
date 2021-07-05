@@ -1,9 +1,13 @@
 <html> 
 <head> <script>
+function variables()
+{
+window.val1 = parseInt(document.getElementById("value1").value);
+ window.val2 = parseInt(document.getElementById("value2").value); 
+}
                 function addNumbers()
                 {
- window.val1 = parseInt(document.getElementById("value1").value);
- window.val2 = parseInt(document.getElementById("value2").value); 
+variables();
   answer.value = val1 + val2;
                 }
  function subNumbers()
