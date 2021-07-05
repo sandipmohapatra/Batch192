@@ -2,8 +2,9 @@
 <head> <script>
 function variables()
 {
+<!-- window is used to make local variable to global variable -->
 window.val1 = parseInt(document.getElementById("value1").value);
- window.val2 = parseInt(document.getElementById("value2").value); 
+window.val2 = parseInt(document.getElementById("value2").value); 
 }
                 function addNumbers()
                 {
@@ -12,14 +13,17 @@ variables();
                 }
  function subNumbers()
                 {
+variables();
   answer.value = val1 - val2;
                 }
  function mulNumbers()
                 {
+variables();
   answer.value = val1 * val2;
                 }
  function divNumbers()
                 {
+variables();
   answer.value = val1/val2;
                 }
 </script></head><body><table>
