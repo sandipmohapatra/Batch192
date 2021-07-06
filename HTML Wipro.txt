@@ -1,0 +1,27 @@
+1)split:- Wipro,learning,center
+2)onBlur() :- event fired when the form element looses the focus.button,textField ,input,label,select,textarea 
+3)roundup()   is -21
+4)merge 2 cells horizontally :-colsspan=2
+5)placeHolder is used for giving hints what has to inserted. 
+6)<select> is used for drop down box.
+7)<bold> is <strong>
+8)<figure> is used for digrams,pictures
+9)charAt(length-1)  :- Y
+10)removeAttr()
+11)$(hide)
+12)$(document.ready) for preventing code from running before document loading is finished.
+13)_myElement we can give tag for xml.
+14)xml version tag:-  <?xml version="1.0" encoding="utf-8"?>
+15)concate() :- add 2 string and new string is created 
+16)rootNode identify 
+ans :- xsl:template match="/"
+17)how to define color for all <p> for JQuery 
+ans :-$("p").css({"background-color":"red"})
+18)isNAN() :- return true when it in not a number.
+19)which tab is used to load external script 
+ans :-<script src="myscript.js"/>
+20)text(val) :- to display text in jquery
+21)dis-advantage of DTD 
+ans:-1)Does not support namespaces.
+2)Doesnot support inheritance
+3)not extensible
