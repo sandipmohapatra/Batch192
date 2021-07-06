@@ -1,0 +1,24 @@
+<script>  
+//Declaring class  
+var emp=class   
+  {  
+//Initializing an object  
+    constructor(id,name)  
+    {  
+ <!-- this keyword is to differenciate between the local variable and the global variable  .Basically it points to current object-->
+      this.id=id; 
+      this.name=name;  
+    }  
+//Declaring method      
+detail()  
+    { 
+  document.writeln(this.id+"      "+this.name+"<br>")      
+}    }  
+//passing object to a variable   
+var e1=new emp(101,"Sandip");  
+var e2=new emp(102,"Kiran");  
+e1.detail(); //calling method  
+e2.detail();  
+</script>
+
+
