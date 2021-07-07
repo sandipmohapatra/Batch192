@@ -134,6 +134,28 @@ public static void main(String[] args)
 	}
 }
 --------------------------------------------------
+Program-4
+-------------------
+package org.monday;
+import java.lang.*;//default pckge
+import java.util.*;
+public class Firstjava 
+{
+public static void main(String[] args) {
+    Scanner ob = new Scanner(System.in);//to take the input values
+    System.out.println("Enter numbers");
+    float a = ob.nextFloat();
+    float b = ob.nextFloat();
+    float c = ob.nextFloat();
+    float d = ob.nextFloat();
+    float e = ob.nextFloat();
+    float f = a+b+c+d+e;
+    float g = (a+b+c+d+e)/5;
+    System.out.println("The sum is "+f);
+    System.out.println("The avg. is "+g);
+}
+}
+-------------------------------------
 
 
 
