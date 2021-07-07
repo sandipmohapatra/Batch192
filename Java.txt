@@ -250,6 +250,50 @@ public class Second
 			}
 	}
 ---------------------------------------------------------------------------
+class and Object 
+----------------------------
+class :- It is a collection of variables and methods.
+It is a blue print of an object.It is also called as object factory.
+------------------------
+Object :- it is an reference pointer to the class.
+By an object we can access the variables and methods of a class.
+----------------------------------------------------------------------------------------
+program-9
+----------------
+package org.Monday;
+import java.lang.*;//default package
+import java.util.*;;
+public class Second 
+{
+	int rollno;
+	String name,address;
+	void input()
+	{
+		Scanner ob=new Scanner(System.in);
+		System.out.println("enter rollno,name and address");
+		rollno=ob.nextInt();
+		name=ob.next();
+		address=ob.next();
+	}
+	void display()
+	{
+		System.out.println("the rollno is "+rollno);
+		System.out.println("the name is "+name);
+		System.out.println("the address is "+address);
+		
+	}
+	public static void main(String[] args)
+	{
+		Second obj=new Second();
+		obj.input();
+		System.out.println("The rollno is "+obj.rollno);
+		obj.display();
+	}
+}
+	
+------------------------------------------------
+
+
 
 
 
