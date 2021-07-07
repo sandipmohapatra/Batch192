@@ -157,7 +157,8 @@ public static void main(String[] args) {
 }
 -------------------------------------
 Program-5
------------------------
+Find greatest of 2 nos.
+-------------------------------------
 package org.Monday;
 import java.lang.*;//default package
 import java.util.*
@@ -178,7 +179,33 @@ public class Second
 
 
 --------------------------------------------------------------
+Program-6
+----------------------
+wa.p to enter 3 nos and find the greatest
+---------------------------------------------------------------------------------
+package org.Monday;
+import java.lang.*;//default package
+import java.util.*
+public class Second 
+{
+	public static void main(String[] args) 
+	{
+		Scanner ob=new Scanner(System.in);//this is to take input
+		System.out.println("enter 3 nos");
+		float a=ob.nextFloat();//to accept the integer values
+		float b=ob.nextFloat();
+		float c=ob.nextFloat();
+				if(a>b && a>c)
+			System.out.println("the greatest is "+a);
+		else if(b>a && b>c)
+			System.out.println("the greatest is "+b);
+		else
+			System.out.println("the greatest is "+c);
+	}
+}
 
+
+-----------------------------------------------------------------------
 
 
 
