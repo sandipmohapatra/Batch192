@@ -116,6 +116,24 @@ public static void main(String[] args)
 	}
 }
 ---------------------------------------------------------
+Program-3
+--------------------
+package org.Monday;
+import java.lang.*;//default package
+import java.util.*
+public class Second 
+{
+public static void main(String[] args) 
+{
+	Scanner ob=new Scanner(System.in);//this is to take input
+	System.out.println("enter 2 nos");
+	float a=ob.nextFloat();//to accept the integer values
+	float b=ob.nextFloat();
+	float c=a+b;
+	System.out.println("the sum is "+c);
+	}
+}
+--------------------------------------------------
 
 
 
