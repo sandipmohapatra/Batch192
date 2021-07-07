@@ -18,7 +18,8 @@ In this we have class and Object.
 In java there is automatic garbage clearence.
 5)Java is a high level language,it is potable and scaleable.
 6)In java we don't have multiple Inheritance.In that case we use Interface which support multiple Inheritace.
-
+7)java is platform independent.
+8)java is casesensitive.
 --------------------------------------------------------------------------
 Data types :-
 primative datatypes.
@@ -75,7 +76,28 @@ we have to save the file with .java extention.we have compile it using jit compi
 we get the compiled file as .class file .it is in byte code.It is platform independent.
 * we have to save the file with the <class name>.java
 --------------------------------------------------------------------------------------
+Program-1
+------------------
+package org.Monday;
 
+public class Second 
+{
+public static void main(String[] args) 
+{
+	byte a=10;
+	short b=20;
+	int c=30;
+	long d=40;
+	float e=50.4f;
+	double f=60.7;
+	char g='a';
+	String h="apple";
+	System.out.println(a+"   "+b+"   "+c);
+	System.out.println(d+"   "+e+"   "+f);
+	System.out.println(g+"   "+h);
+	}
+}
+----------------------------------------------------------------
 
 
 
