@@ -250,6 +250,43 @@ public class Second
 			}
 	}
 ---------------------------------------------------------------------------
+Program-9
+----------------------
+package monday;
+import java.util.Scanner;
+public class OddEven {
+    public static void main(String arg[]) {
+        
+        Scanner num=new Scanner(System.in);
+        System.out.println("Enter five numbers");
+        int a[]=new int[5];
+        for(int i=0;i<5;i++)
+        {
+            a[i]=num.nextInt();
+        
+        }
+        System.out.println("THe EVEN numbers are");
+        for(int i=0;i<5;i++)
+        {
+            if(a[i]%2==0)
+            {  
+                System.out.println(a[i]);  
+            }  
+            
+        }
+        System.out.println("THe ODD numbers are");
+        for(int i=0;i<5;i++)
+        {
+            if(a[i]%2!=0)
+            {  
+                System.out.println(a[i]);  
+            }  
+            
+        }
+        
+    }
+}
+-------------------------------------------------------------------------------
 class and Object 
 ----------------------------
 class :- It is a collection of variables and methods.
@@ -258,7 +295,7 @@ It is a blue print of an object.It is also called as object factory.
 Object :- it is an reference pointer to the class.
 By an object we can access the variables and methods of a class.
 ----------------------------------------------------------------------------------------
-program-9
+program-10
 ----------------
 package org.Monday;
 import java.lang.*;//default package
