@@ -1,0 +1,93 @@
+Core-java
+jdbc,hibernate
+servlet,jsp
+spring
+restful webservices
+springboot
+angular +spring boot
+software requirement 
+1)eclipse  2)tomcat server-9  3)Oracle 10xe 4)Nodejs
+-----------------------------------------------------------------------
+Features of Java
+------------------------
+1)Java is purely OOPS (Object Oriented Programming Language).
+In this we have class and Object.
+2)In java we can develop standalone application,web application,network application and mobile application.
+3)Java is simpler than c and c++ as we don't have pointer concept.
+4)we have constructor(memory blocks are created) in java but no destructor(memory blocks are deleted).
+In java there is automatic garbage clearence.
+5)Java is a high level language,it is potable and scaleable.
+6)In java we don't have multiple Inheritance.In that case we use Interface which support multiple Inheritace.
+
+--------------------------------------------------------------------------
+Data types :-
+primative datatypes.
+-----------------------------
+1)byte ---1 byte 
+2)short ---2 bytes
+3)int ---4 bytes
+4)long ---8 bytes
+5)float ---4 bytes
+6)double ---8 bytes
+7)char ---2 bytes
+8)boolan ---1 bit
+-------------------------------
+derived datatypes
+----------------------------
+1)String 
+2)array
+3)class
+----------------------------------------
+Operators
+---------------------
+1)Unary operator
+i++,i--,++i,--i
+---------------------------------
+2)Binary operator
+a)Arthmatic : +,-,*,/,%(modulus/reminder)
+b)logical: ||,&&
+c)relational/comparative:<,>,<=,>=,==,!=
+d)assignment :- =
+e)Bitwise :-<<,>>,nor
+-------------------------------------------------
+3)Ternary operator  :- ?,:
+---------------------------------------------------------------
+Access specifier
+--------------------------
+1)private :-If we declare variables and methods as private we can access it within the class only.
+
+2)public:-If we declare variables and methods as public we can access it within the class ,outside the class and also outside the package.
+
+3)protected:-If we declare variables and methods as proteted we can access it within the class ,outside the class which is inherited(parent class and child class).
+
+4)default:-If we declare variables and methods as default  we can access it within the class and outside the class but not out side the package.
+-----------------------------------------------------
+package -------class-----methods
+we have some predefined packages ie
+1)java.lang;
+2)java.util;
+3)java.io;
+-------------------------------------------------
+For java we have to install jdk1.16 latest (java development kit)
+jre1.16 it is java runtime environment.
+jdk is platform dependent means jdk is different for unix,window or Mac.
+we have to save the file with .java extention.we have compile it using jit compiler(Just in time ).
+we get the compiled file as .class file .it is in byte code.It is platform independent.
+* we have to save the file with the <class name>.java
+--------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
