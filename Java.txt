@@ -641,8 +641,77 @@ public class Finalclass
 	}
 }
 -----------------------------------------------------------------
+bank class has a insurance
+------------------------------------------
+wap to display a bank class having :- accno,name,balance,insurance
 
+Insurance class :- insno,instype,premium
+Display the details of bank class.
+------------------------------------------------------------------------
+OOPs concept
+-----------------------
+1)class
+2)object
+3)constructor
+4)inheritance
+5)polymerphisim
+a)run time ---------------------method overriding(abstract class and interface)
+b)compile time----------------method overloading
+6)abstraction----------hinding the complexcity and displaying the simplicity.(switching on the fan)
+7)encapsulation------protecting the data by using private access specifier. (capsule protect the medecine)
+-------------------------------------------------------------------------------------------------------------------------------------------
+Example-19
+------------------------
+package Thrusday;
+public class EncapsulationExample 
+{
+private int accno,pin;
+private String name,pass;
+public int getAccno() {
+	return accno;
+}
+public void setAccno(int accno) {
+	this.accno = accno;
+}
+public int getPin() {
+	return pin;
+}
+public void setPin(int pin) {
+	this.pin = pin;
+}
+public String getName() {
+	return name;
+}
+public void setName(String name) {
+	this.name = name;
+}
+public String getPass() {
+	return pass;
+}
+public void setPass(String pass) {
+	this.pass = pass;
+}
 
+}
+--------------------------------------------------
+package Thrusday;
+
+public class Accessclass 
+{
+public static void main(String[] args) {
+	EncapsulationExample ob=new EncapsulationExample();
+	ob.setAccno(1234);
+	ob.setName("Akash");
+	ob.setPin(7676);
+	ob.setPass("akash123");
+	System.out.println("the accno is "+ob.getAccno());
+	System.out.println("the name is "+ob.getName());
+	System.out.println("the pin is "+ob.getPin());
+	System.out.println("the password is "+ob.getPass());
+	
+}
+}
+--------------------------------------------------------------
 	
 
 
