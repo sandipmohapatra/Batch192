@@ -356,15 +356,6 @@ public class Second
 	}
 	public static void main(String[] args)
 	{
-	
-	/*
-		 * Second obj1=new Second(); 
-		 * Second obj2=new Second(); 
-		 * Second obj3=new Second();
-		 */
-		 
-		 
-		 
 		Second[] obj=new Second[3];
 		for(int i=0;i<3;i++)
 		{
@@ -381,7 +372,66 @@ public class Second
 }
 
 -----------------------------------------------------------------------------------------
+constructor vs method:-
+what is a constructor?
+A constructor is a method which as the same name as that of the class name.
+A constructor execute automatically when an object is created for a class. memory blocks are build.
+As the constructor exceute first so all the assignments(initiallization) are done in this.
+we have 2 types of constructor.
+1)default constructor :- whithout any parameter.
+2)parameterized constructor :- with parameter.
+---------------------------------------------------------------------------------
+program-12
+------------------------
+package org.Tuesday;
 
+public class FirstJava 
+{
+int rollno;      //instance variables or global variables can be accessed through out the class.
+String name,address;
+FirstJava()
+{
+	System.out.println("This is a default constructor");
+}
+FirstJava(int roll,String name,String address)//local variables can be accessed with the methods only
+{
+	//to differenceat between instance variable and local variables we use this keyword.it points to the 
+	//current object  
+rollno=roll;
+this.name=name;
+this.address=address;
+}
+void display()
+{
+	System.out.println("The rollno is "+rollno);
+	System.out.println("The name is "+name);
+	System.out.println("The address is "+address);
+	}
+
+}
+
+----------------------------------------------------------------
+program-13
+----------------------
+package org.Tuesday;
+
+public class SecondPrg
+{
+public static void main(String[] args) 
+{
+	
+FirstJava ob=new FirstJava(101,"sandip","Bangalore");
+FirstJava ob1=new FirstJava(102,"Akash","Bangalore");
+FirstJava ob2=new FirstJava(103,"Vikash","Bangalore");
+FirstJava ob3=new FirstJava(104,"Priyanka","Bangalore");
+FirstJava ob4=new FirstJava();
+ob.display();
+ob1.display();
+ob2.display();
+ob3.display();
+}
+}
+--------------------------------------------------------------
 
 
 
