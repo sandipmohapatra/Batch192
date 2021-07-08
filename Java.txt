@@ -570,8 +570,77 @@ public static void main(String[] args) {
 }
 }
 --------------------------------------------------------------------------
+wap to create a employee class and a department class inheriting it.
 
+employee class :- empno,name,salary,designation
 
+department class :-deptno,deptname,location
+
+create object for department class.display all the details
+---------------------------------------------------------------------------------------
+Inheritance ---(is -a) relationship 
+Has-a relation ship
+example :-
+Employee has a address
+House has a kitchen
+----------------------------------------------
+program-18
+--------------------
+package Thrusday;
+
+public class Employee 
+{
+int empno,salary;
+String name;
+Address address;
+public Employee(int empno, String name, int salary, Address address) 
+{
+	this.empno = empno;
+	this.name = name;
+	this.salary = salary;
+	this.address = address;
+}
+void display()
+{
+	System.out.println("the employee no is "+empno);
+	System.out.println("the employee name is "+name);
+	System.out.println("the employee salary is "+salary);
+	System.out.println("the employee address is "+address);
+	}
+}
+---------------------------------------------------------------------
+package Thrusday;
+
+public class Address 
+{
+int streetno;
+String streetname,city,state;
+public Address(int streetno, String streetname, String city, String state) 
+{
+	this.streetno = streetno;
+	this.streetname = streetname;
+	this.city = city;
+	this.state = state;
+}
+@Override
+public String toString() //to convert object to string
+{
+	return "Address [streetno=" + streetno + ", streetname=" + streetname + ", city=" + city + ", state=" + state + "]";
+}
+
+}
+-------------------------------------------------------------
+package Thrusday;
+
+public class Finalclass 
+{
+	public static void main(String[] args) {
+		Address address=new Address(10,"MG Road","bangalore","karnataka");
+		Employee emp=new Employee(101,"sandip",78000,address);
+		emp.display();
+	}
+}
+-----------------------------------------------------------------
 
 
 	
