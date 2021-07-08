@@ -374,12 +374,18 @@ public class Second
 -----------------------------------------------------------------------------------------
 constructor vs method:-
 what is a constructor?
-A constructor is a method which as the same name as that of the class name.
-A constructor execute automatically when an object is created for a class. memory blocks are build.
-As the constructor exceute first so all the assignments(initiallization) are done in this.
+1)A constructor is a method which as the same name as that of the class name.
+2)A constructor execute automatically when an object is created for a class. memory blocks are build.
+3)As the constructor exceute first so all the assignments(initiallization) are done in this.
 we have 2 types of constructor.
-1)default constructor :- whithout any parameter.
-2)parameterized constructor :- with parameter.
+a)default constructor :- whithout any parameter.
+b)parameterized constructor :- with parameter.
+4)A constructor doesnot have any return type nor it returns any value.
+constructor vs method()
+1)A constructor is a method which as the same name as that of the class name but the method can have any name.
+2)A constructor execute automatically when an object is created for a class but method has to be called explicitly.
+3)A constructor doesnot have any return type nor it returns any value. but a method has return type or void .
+4)if we use more than one cunstructor in a program it is known as constructor overloading where as if we use more than one time the method with the same name but different signature it is known as method overloading.
 ---------------------------------------------------------------------------------
 program-12
 ------------------------
@@ -432,7 +438,67 @@ ob3.display();
 }
 }
 --------------------------------------------------------------
+program-14
+-----------------
+package org.Tuesday;
 
+public class FirstJava 
+{
+int rollno;      //instance variables or global variables can be accessed through out the class.
+String name,address;//instance variables or global variables can be accessed through out the class.
+FirstJava()
+{
+	System.out.println("This is a default constructor");
+}
+FirstJava(int rollno,String name,String address)//local variables can be accessed with the methods only
+{
+	//to differenceat between instance variable and local variables we use this keyword.it points to the 
+	//current object  
+this.rollno=rollno;
+this.name=name;
+this.address=address;
+}
+void display()
+{
+	System.out.println("The rollno is "+rollno);
+	System.out.println("The name is "+name);
+	System.out.println("The address is "+address);
+	}
+int sum(int a,int b)
+{//function returns a value where as constructor doesnot return any value
+	return a+b;
+}
+float sum(float a,float b)
+{
+	return a+b;
+}
+FirstJava(int a,int b)
+{
+	System.out.println("the sum of a and b is "+(a+b));
+}
+}
+--------------------------------------------------
+package org.Tuesday;
+
+public class SecondPrg
+{
+public static void main(String[] args) 
+{
+FirstJava ob=new FirstJava(101,"sandip","Bangalore");
+FirstJava ob1=new FirstJava(102,"Akash","Bangalore");
+FirstJava ob2=new FirstJava(103,"Vikash","Bangalore");
+FirstJava ob3=new FirstJava(104,"Priyanka","Bangalore");
+FirstJava ob4=new FirstJava();//default constructor
+FirstJava ob5=new FirstJava(5,8);
+System.out.println("the sum is "+ob.sum(5,7)); //with single object we can call n no of methods.
+System.out.println("the sum is "+ob.sum(5.5f,7.3f));
+ob.display();
+ob1.display();
+ob2.display();
+ob3.display();
+}
+}
+---------------------------------------------------------------
 
 
 
