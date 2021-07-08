@@ -356,6 +356,15 @@ public class Second
 	}
 	public static void main(String[] args)
 	{
+	
+	/*
+		 * Second obj1=new Second(); 
+		 * Second obj2=new Second(); 
+		 * Second obj3=new Second();
+		 */
+		 
+		 
+		 
 		Second[] obj=new Second[3];
 		for(int i=0;i<3;i++)
 		{
