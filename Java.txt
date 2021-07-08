@@ -478,6 +478,7 @@ FirstJava(int a,int b)
 }
 }
 --------------------------------------------------
+program-15
 package org.Tuesday;
 
 public class SecondPrg
@@ -499,12 +500,76 @@ ob3.display();
 }
 }
 ---------------------------------------------------------------
+//wap to create a employee class pass the data using constructor
+//empno,name,salary,designation.
+--------------------------------------------------------------------------
+Inheritance 
+----------------------------
+what is the use of Inheritance ?
+Reuse of exixting code and we will add some more features.
+Java supports only single inheritance.(single parent)
+we have 5 types of inheritance.
+1)single inheritance
+2)multi-level inheritance
+3)hyrarchal inheritance
+4)multiple inheritance
+5)Hybrid inheritance
+------------------------------------------------------------
+we use the keyword extends to inherite a parent class into a child class.
+we use the keyword super to access the super/parent class variables and methods into the child class.
+----------------------------------------------------------------
 
-
-
-
-
-
+program-16
+----------------------------
+package Wednesday;
+import java.util.*;
+public class FirstJava 
+{
+int rollno;
+String name,address;
+void input()
+{
+	Scanner ob=new Scanner(System.in);
+	System.out.println("enter rollno,name,address");
+	rollno=ob.nextInt();
+	name=ob.next();
+	address=ob.next();
+}
+void display()
+{
+	System.out.println("the rollno is "+rollno + " the name is "+name+" the address is "+address);
+}
+}
+--------------------------------------------------------
+Program-17
+--------------------
+package Wednesday;
+import java.util.*;
+public class Second extends FirstJava 
+{
+int m1,m2,m3,total;
+void input()
+{
+	Scanner ob=new Scanner(System.in);
+	super.input();
+	System.out.println("enter 2 subject's marks");
+	m1=ob.nextInt();
+	m2=ob.nextInt();
+	m3=ob.nextInt();
+}
+void display()
+{
+	super.display();
+	System.out.println("m1="+ m1 +"  m2= "+m2+"  m3= "+m3);
+	System.out.println("the total is "+(m1+m2+m3));
+}
+public static void main(String[] args) {
+	Second obj=new Second();
+	obj.input();
+	obj.display();
+}
+}
+--------------------------------------------------------------------------
 
 
 
