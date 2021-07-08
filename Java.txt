@@ -329,7 +329,62 @@ public class Second
 }
 	
 ------------------------------------------------
+Program-11
+--------------------
+//Array of objects 
+package org.Monday;
+import java.lang.*;//default package
+import java.util.*;;
+public class Second 
+{
+	String rollno;
+	String name,address;
+	void input()
+	{
+		Scanner ob=new Scanner(System.in);
+		System.out.println("enter rollno,name and address");
+		rollno=ob.nextLine();
+		name=ob.nextLine();
+		address=ob.nextLine();
+	}
+	void display()
+	{
+		System.out.println("the rollno is "+rollno);
+		System.out.println("the name is "+name);
+		System.out.println("the address is "+address);
+		
+	}
+	public static void main(String[] args)
+	{
+		Second[] obj=new Second[3];
+		for(int i=0;i<3;i++)
+		{
+			System.out.println("Enter data for Student no "+(i+1));
+		obj[i]=new Second();//new object will be created each time	
+		obj[i].input();
+		}
+		for(int i=0;i<3;i++)
+		{
+			System.out.println("Data of Student no "+(i+1));
+		obj[i].display();
+		}
+	}
+}
 
+-----------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+	
 
 
 
