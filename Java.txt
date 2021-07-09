@@ -717,6 +717,12 @@ Because a single copy of the variables and methods are present in the JVM.
 we can declare a variable as static.we can declare a method as static.
 we can have a static block.The static block execute before the main method.
 we can have a static class but it should be a inner class.
+we cannot access non-static variables inside the static method().
+we can access static variables inside the non-static method().
+static variable's value once incremented remain incremented.
+
+* The main use of staic is for memory management.It saves lot of memory.
+
 example 1:
 --------------------
 package Friday;
@@ -860,7 +866,58 @@ public static void main(String[] args) {
 }
 }
 ------------------------------------------------------------
-
+example-5
+---------------------
+package Friday;
+import java.util.*;
+public class Test1
+{
+ static int rollno;//global variable or instance variable
+static String name,address;//global variable or instance variable
+static int i;
+Test1()
+{
+	System.out.println("this is a default constructor");
+}
+static void counter()
+{
+	i++;
+	System.out.println(i);
+}
+static void input()
+{
+	Scanner ob=new Scanner(System.in);
+	System.out.println("enter rollno,name and address");
+	rollno=ob.nextInt();
+	name=ob.next();
+	address=ob.next();
+	}
+static void display()
+{
+	System.out.println("the rollno is "+rollno);
+	System.out.println("the name is "+name);
+	System.out.println("the address is "+address);
+	
+}
+static
+{
+	input();
+	System.out.println("rollno  :"+rollno);
+	System.out.println("this is a static block");
+	System.out.println("this execute before the main method");
+}
+public static void main(String[] args) {
+	Test1 ob=new Test1();
+	display();
+	System.out.println("the rollno is "+ob.rollno);
+	counter();
+	counter();
+	counter();
+	counter();
+	
+}
+}
+-----------------------------------
 
 
 
