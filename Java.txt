@@ -918,7 +918,85 @@ public static void main(String[] args) {
 }
 }
 -----------------------------------
+Example-6
+-------------------
+package Friday;
+import java.util.*;
+public class Test1
+{
+  int rollno;//global variable or instance variable
+ String name,address;//global variable or instance variable
+static int i;
+Test1()
+{
+	System.out.println("this is a default constructor");
+}
+static void counter()
+{
+	i++;
+	System.out.println(i);
+}
+ void input()
+{
+	Scanner ob=new Scanner(System.in);
+	System.out.println("enter rollno,name and address");
+	rollno=ob.nextInt();
+	name=ob.next();
+	address=ob.next();
+	}
+void display()
+{
+	System.out.println("the rollno is "+rollno);
+	System.out.println("the name is "+name);
+	System.out.println("the address is "+address);
+	
+}
+static
+{
+	System.out.println("this is a static block");
+	System.out.println("this execute before the main method");
+}
 
+}
+-----------------------------------------
+example-7
+--------------------
+package Friday;
+import java.util.*;
+public class Test2 extends Test1
+{
+	int m1,m2,m3,total;
+	 void input1()
+	{	super.input();
+		 Scanner ob=new Scanner(System.in);
+		System.out.println("this is a child function");
+		System.out.println("enter 3 subject's marks");
+		m1=ob.nextInt();
+		m2=ob.nextInt();
+		m3=ob.nextInt();
+	}
+	 
+	void display1()
+	{
+		total=m1+m2+m3;
+		System.out.println("the total is "+total);
+	}
+	public static void main(String[] args) 
+	{
+		Test2 ob=new Test2();
+		ob.input();
+		ob.input1();
+		ob.display();
+		ob.display1();
+		System.out.println("the rollno is "+ob.rollno);
+		counter();
+		counter();
+		counter();
+		counter();
+		
+	}
+}
+-----------------------------------------------------------------
 
 
 
