@@ -997,8 +997,55 @@ public class Test2 extends Test1
 	}
 }
 -----------------------------------------------------------------
+Example-8
+----------------------
+constructor and inheritance
+------------------------------------------
+in this the super class constructor will execute first then the subclass constructor.
+package Friday;
+public class Inheritance1 
+{
+int rollno;
+String name,address;
+ Inheritance1(int rollno, String name, String address) 
+{
+	this.rollno = rollno;
+	this.name = name;
+	this.address = address;
+}
+void display()
+{
+	System.out.println("rollno :"+rollno);
+	System.out.println("name :"+name);
+	System.out.println("address :"+address);
+	}
+}
+-----------------------------------------------
+package Friday;
+public class Inheritance2 extends Inheritance1
+{
+	int phno;
+	String email;
+	Inheritance2(int rollno, String name, String address, int phno, String email)
+	{
+		super(rollno, name, address);//first the super class constructor will execute then the sub class
+		this.phno = phno;
+		this.email = email;
+	}
+void display()
+{
+	super.display();
+	System.out.println("the phno is "+phno);
+	System.out.println("the email is "+email);
+}
+public static void main(String[] args)
+{
+	Inheritance2 ob=new Inheritance2(101,"sandip","bangalore",776655,"sandip@gmail.com");
+	ob.display();
+}
 
-
+}
+--------------------------------------------------------------
 
 
 
