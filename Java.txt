@@ -1154,7 +1154,78 @@ public static void main(String[] args) {
 	System.out.println(ob1.getBank());
 }
 }
-------------------------------------------------------------------------------------------------------
+---------------------------------------------------(Has-A)---------------------------------------------------
+wap to enter Student --rollno,name,address,school
+School--name,loc,board
+and display the data using getter and setter
+-----------------------------------------------------------------------
+Abstract class and Interface
+-----------------------------------------------
+abstract class :- it is a incomplete class.It brief us about the application or program.
+It contains only abstract methods(method without body) and concret mathods(method with body)
+abstract  cannot be instanciated(object cannot be created for the class).we have to extend it by a child class and create object for the child class.
+we have to override the method 
+example:-
+abstract class Bank
+{
+abstract void openAccount();
+abstract void deposite();
+abstract void applyCreditcard();
+abstract void applyDebitcard();
+}
+class trans exteds Bank
+{
+}
+ -------------------------------------
+Example-10
+-----------------------------------------------
+package Friday;
+
+ abstract class Abstractexample1
+{
+	abstract void openAccount();
+	abstract void deposite();
+	abstract void applyCreditcard();
+	abstract void applyDebitcard();
+void login()
+	{
+		System.out.println("this is login page");
+	}
+	}
+class Abstractexample extends Abstractexample1
+{
+
+	@Override      //redefining the method 
+	void openAccount() 
+	{
+		
+		System.out.println("this is openaccount");
+	}
+
+	@Override
+	void deposite() {
+		
+		System.out.println("deposite");
+	}
+
+	@Override
+	void applyCreditcard() {
+	System.out.println("apply for credit card");
+	}
+
+	@Override
+	void applyDebitcard() {
+		System.out.println("apply for debit card");
+			}
+	public static void main(String[] args) {
+		Abstractexample ob=new Abstractexample();
+		ob.openAccount();
+		ob.applyDebitcard();
+		ob.applyCreditcard();
+		ob.deposite();
+		ob.login();
+			}
+}
 
 
 
