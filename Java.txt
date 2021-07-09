@@ -650,10 +650,10 @@ Display the details of bank class.
 ------------------------------------------------------------------------
 OOPs concept
 -----------------------
-1)class
-2)object
-3)constructor
-4)inheritance
+1)class -->variables and methods
+2)object -->reference pointer
+3)constructor -->default and parameterized
+4)inheritance -->for code reuseablity
 5)polymerphisim
 a)run time ---------------------method overriding(abstract class and interface)
 b)compile time----------------method overloading
@@ -712,8 +712,113 @@ public static void main(String[] args) {
 }
 }
 --------------------------------------------------------------
-	
-
+static :- if we declare the variable and methods as static we can access it without creating an object.
+Because a single copy of the variables and methods are present in the JVM.
+we can declare a variable as static.we can declare a method as static.
+we can have a static block.The static block execute before the main method.
+we can have a static class but it should be a inner class.
+example 1:
+--------------------
+package Friday;
+import java.util.*;
+public class Test1
+{
+static int rollno;//global variable or instance variable
+static String name,address;//global variable or instance variable
+static void input()
+{
+	Scanner ob=new Scanner(System.in);
+	System.out.println("enter rollno,name and address");
+	rollno=ob.nextInt();
+	name=ob.next();
+	address=ob.next();
+	}
+static void display()
+{
+	System.out.println("the rollno is "+rollno);
+	System.out.println("the name is "+name);
+	System.out.println("the address is "+address);
+}
+public static void main(String[] args) {
+	input();
+	display();
+	System.out.println("the rollno is "+rollno);
+}
+}
+-------------------------------------------------------------------------------------	
+Example -2
+---------------------------------
+package Friday;
+import java.util.*;
+public class Test1
+{
+static int rollno;//global variable or instance variable
+static String name,address;//global variable or instance variable
+static void input()
+{
+	Scanner ob=new Scanner(System.in);
+	System.out.println("enter rollno,name and address");
+	rollno=ob.nextInt();
+	name=ob.next();
+	address=ob.next();
+	}
+static void display()
+{
+	System.out.println("the rollno is "+rollno);
+	System.out.println("the name is "+name);
+	System.out.println("the address is "+address);
+}
+static
+{
+	System.out.println("this is a static block");
+	System.out.println("this execute before the main method");
+}
+public static void main(String[] args) {
+	input();
+	display();
+	System.out.println("the rollno is "+rollno);
+}
+}
+-------------------------------------------------------------------------
+example-3
+----------------------
+package Friday;
+import java.util.*;
+public class Test1
+{
+static int rollno;//global variable or instance variable
+static String name,address;//global variable or instance variable
+Test1()
+{
+	System.out.println("this is a default constructor");
+}
+static void input()
+{
+	Scanner ob=new Scanner(System.in);
+	System.out.println("enter rollno,name and address");
+	rollno=ob.nextInt();
+	name=ob.next();
+	address=ob.next();
+	}
+static void display()
+{
+	System.out.println("the rollno is "+rollno);
+	System.out.println("the name is "+name);
+	System.out.println("the address is "+address);
+}
+static
+{
+	System.out.println("this is a static block");
+	System.out.println("this execute before the main method");
+}
+public static void main(String[] args) {
+	Test1 ob=new Test1();
+	input();
+	display();
+	System.out.println("the rollno is "+rollno);
+}
+}
+-------------------------------------------------
 
 
 
