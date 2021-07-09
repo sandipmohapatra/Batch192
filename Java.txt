@@ -1001,7 +1001,8 @@ Example-8
 ----------------------
 constructor and inheritance
 ------------------------------------------
-in this the super class constructor will execute first then the subclass constructor.
+In this the super class constructor will execute first then the subclass constructor.
+----------------------------------------------------------------------------------------
 package Friday;
 public class Inheritance1 
 {
@@ -1046,6 +1047,134 @@ public static void main(String[] args)
 
 }
 --------------------------------------------------------------
+wap to enter details of a 
+car class having regno,cname,price,type(petrrol/disel)
+luxuary car having ac,stereo,safety
+use inheritance and constructor and display the details.
+create 2 or more objects.
+--------------------------------------------------------------------------
+Example-9
+---------------------
+package Friday;
+public class GetterSetter 
+{
+private int empno,salary;
+private String name,address;
+private Bank bank; 
+public Bank getBank() {
+	return bank;
+}
+public void setBank(Bank bank) {
+	this.bank = bank;
+}
+public int getEmpno() {
+	return empno;
+}
+public void setEmpno(int empno) {
+	this.empno = empno;
+}
+public int getSalary() {
+	return salary;
+}
+public void setSalary(int salary) {
+	this.salary = salary;
+}
+public String getName() {
+	return name;
+}
+public void setName(String name) {
+	this.name = name;
+}
+public String getAddress() {
+	return address;
+}
+public void setAddress(String address) {
+	this.address = address;
+}
+}
+-------------------------------------------------------------------------
+package Friday;
+
+public class Bank 
+{
+private int accno,bal;
+private String loc,IFSC;
+public int getAccno() {
+	return accno;
+}
+public void setAccno(int accno) {
+	this.accno = accno;
+}
+public int getBal() {
+	return bal;
+}
+public void setBal(int bal) {
+	this.bal = bal;
+}
+public String getLoc() {
+	return loc;
+}
+public void setLoc(String loc) {
+	this.loc = loc;
+}
+public String getIFSC() {
+	return IFSC;
+}
+public void setIFSC(String iFSC) {
+	IFSC = iFSC;
+}
+@Override
+public String toString() {
+	return "Bank [accno=" + accno + ", bal=" + bal + ", loc=" + loc + ", IFSC=" + IFSC + "]";
+}
+
+
+}
+------------------------------------------------------------------------------
+package Friday;
+
+public class Finalclass 
+{
+public static void main(String[] args) {
+	Bank ob=new Bank();
+	ob.setAccno(1001);
+	ob.setIFSC("SBIN006758");
+	ob.setLoc("MG Road");
+	ob.setBal(7500);
+	GetterSetter ob1=new GetterSetter();
+	ob1.setAddress("bangalore");
+	ob1.setEmpno(101);
+	ob1.setName("sandip");
+	ob1.setSalary(78000);
+	ob1.setBank(ob);
+	System.out.println(ob1.getEmpno());
+	System.out.println(ob1.getName());
+	System.out.println(ob1.getSalary());
+	System.out.println(ob1.getAddress());
+	System.out.println(ob1.getBank());
+}
+}
+------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
