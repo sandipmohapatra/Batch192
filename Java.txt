@@ -1467,7 +1467,33 @@ class Interfaceexample implements acadamic
 	
 }
 ----------------------------------------------------------------------------
+final :- To protect your data.
+we can declare a class as final.if we declare class as final we cannot inherite it.
+we can declare a variable as final.we have to assign it and it cannot be changed.
+we can declare a method as final.if we declare method as final we cannot override it.
 
+-----------------------------------------------------------------------------------------------------------------
+example-15
+----------------------
+package saturday;
+public final class FinalExample 
+{
+	final int a=10;
+final void display()
+{
+	// a=20; not allowed
+	System.out.println("this is final method.");
+}
+public static void main(String[] args) 
+{
+	int a=30;
+	FinalExample ob=new FinalExample();
+	ob.display();
+	System.out.println("the value of a is "+ob.a);
+	System.out.println("the value of a is "+a);
+}
+}
+------------------------------------------------------------------
 
 
 
