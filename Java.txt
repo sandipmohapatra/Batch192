@@ -1380,6 +1380,8 @@ By interface java supports multiple inheritance.
 We donot use the keyword abstract to the methods.
 We cannot instanciate an interface.
 An interface can extend another interface.
+We have to use public access specifier while overriding the abstract methods.
+if we declare a variable inside a interface it will be static and final.A final variable has to be assigned and cannot be changed.
 --------------------------------
 example-13
 
@@ -1430,6 +1432,45 @@ class Interfaceexample implements student,acadamic
 	}
 }
 ---------------------------------------------
+create a interface employee :- input details(empno,name,address)
+			display details()
+interface dept:- input details(deptno,name,loc)
+			display details()
+create a child class to take input and display the details.  
+------------------------------------------------------------------------------
+Example-14
+package saturday;
+interface student
+{
+	int a=10;
+void getData1();
+}
+interface acadamic extends student
+{
+	void getData();
+}
+class Interfaceexample implements acadamic 
+{
+	@Override
+	public void getData() {
+	System.out.println("This is getData");
+			}
+	@Override
+	public void getData1() {
+		System.out.println("This is getData1");
+			}
+	public static void main(String[] args) {
+		Interfaceexample ob=new Interfaceexample();
+		ob.getData();
+		System.out.println("the value of a is :"+a);
+		}
+	
+}
+----------------------------------------------------------------------------
+
+
+
+
 
 
 
