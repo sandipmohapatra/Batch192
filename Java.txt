@@ -1161,8 +1161,8 @@ and display the data using getter and setter
 -----------------------------------------------------------------------
 Abstract class and Interface
 -----------------------------------------------
-abstract class :- it is a incomplete class.It brief us about the application or program.
-It contains only abstract methods(method without body) and concret mathods(method with body)
+abstract class :- It is a incomplete class.It brief us about the application or program.
+It contains  abstract methods(method without body) and concret methods(method with body)
 abstract  cannot be instanciated(object cannot be created for the class).we have to extend it by a child class and create object for the child class.
 we have to override the method 
 example:-
@@ -1185,12 +1185,12 @@ package Friday;
 {
 	abstract void openAccount();
 	abstract void deposite();
-	abstract void applyCreditcard();
+	abstract void applyCreditcard();//
 	abstract void applyDebitcard();
-void login()
+	void login()
 	{
-		System.out.println("this is login page");
-	}
+	System.out.println("this is login page");
+		}
 	}
 class Abstractexample extends Abstractexample1
 {
@@ -1217,6 +1217,71 @@ class Abstractexample extends Abstractexample1
 	void applyDebitcard() {
 		System.out.println("apply for debit card");
 			}
+	public static void main(String[] args) {                                                                         
+		Abstractexample ob=new Abstractexample();
+		ob.openAccount();
+		ob.applyDebitcard();
+		ob.applyCreditcard();
+		ob.deposite();
+		             ob.login();
+			}
+}
+------------------------------------------------------------------------
+Example -11
+package Friday;
+
+ abstract class Abstractexample1
+{
+	abstract void openAccount();
+	abstract void deposite();
+	abstract void applyCreditcard();
+	abstract void applyDebitcard();
+	void login()
+	{
+		System.out.println("this is login page");
+	}
+	void register()
+	{
+		System.out.println("This is register");
+	}
+	}
+class Abstractexample extends Abstractexample1
+{
+
+	@Override      //redefining the method 
+	void openAccount() 
+	{
+		
+		System.out.println("this is openaccount");
+	}
+
+	@Override  //we require at least 2 classes .the parent class methods and the child class methods should be same 
+	void deposite() {
+		
+		System.out.println("deposite");
+	}
+
+	@Override
+	void applyCreditcard() {
+	System.out.println("apply for credit card");
+	}
+
+	@Override
+	void applyDebitcard() {
+		System.out.println("apply for debit card");
+			}
+	void login()
+	{
+		System.out.println("this is login page in child class");
+	}
+	int sum(int a,int b)
+	{
+		return a+b;
+	}
+	float sum(float a,float b)
+	{
+		return a+b;
+	}
 	public static void main(String[] args) {
 		Abstractexample ob=new Abstractexample();
 		ob.openAccount();
@@ -1224,8 +1289,161 @@ class Abstractexample extends Abstractexample1
 		ob.applyCreditcard();
 		ob.deposite();
 		ob.login();
-			}
+		ob.register();
+		System.out.println("the sum is "+ob.sum(4,5));
+		System.out.println("the sum is "+ob.sum(4.3f,5.5f));
+					}
 }
+
+------------------------------------------------------------------
+Example-12
+package Friday;
+
+ abstract class Abstractexample1
+{
+	 int a=10,b=20;
+	abstract void openAccount(int no);
+	abstract void deposite();
+	abstract void applyCreditcard();
+	abstract void applyDebitcard();
+	void login()
+	{
+		System.out.println("this is login page");
+		System.out.println("the sum is "+(a+b));
+	}
+	void register()
+	{
+		System.out.println("This is register");
+	}
+	}
+class Abstractexample extends Abstractexample1
+{
+
+	@Override      //redefining the method 
+	void openAccount(int no) 
+	{
+		
+		System.out.println("this is openaccount for "+no);
+	}
+
+	@Override  //we require at least 2 classes .the parent class methods and the child class methods should be same 
+	void deposite() {
+		
+		System.out.println("deposite");
+	}
+
+	@Override
+	void applyCreditcard() {
+	System.out.println("apply for credit card");
+	}
+
+	@Override
+	void applyDebitcard() {
+		System.out.println("apply for debit card");
+			}
+	void login()
+	{
+		System.out.println("this is login page in child class");
+	}
+	int sum(int a,int b)
+	{
+		return a+b;
+	}
+	float sum(float a,float b)
+	{
+		return a+b;
+	}
+	public static void main(String[] args) {
+		Abstractexample ob=new Abstractexample();
+		ob.openAccount(101);
+		ob.applyDebitcard();
+		ob.applyCreditcard();
+		ob.deposite();
+		ob.login();
+		ob.register();
+		System.out.println("the sum is "+ob.sum(4,5));
+		System.out.println("the sum is "+ob.sum(4.3f,5.5f));
+					}
+}
+-----------------------------------------------------------
+wap for a bank transaction using abstract class.
+abstract class bank
+{
+abstract methods like open account,deposite,withdraw
+and finally display the balance.
+}
+------------------------------------------------------------------------- 
+Interface :-
+It is similar to abstract class but it doesnot have concret methods.
+It only have abstract methods.we use the word implements to access the interface.
+By interface java supports multiple inheritance.
+We donot use the keyword abstract to the methods.
+We cannot instanciate an interface.
+An interface can extend another interface.
+--------------------------------
+example-13
+
+package saturday;
+interface student
+{
+void getData();
+void displayData();
+}
+interface acadamic
+{
+	void getMarks();
+	void displayMarks();
+}
+class Interfaceexample implements student,acadamic
+{
+
+	@Override
+	public void getMarks() {
+		System.out.println("the marks is 78");
+		
+	}
+
+	@Override
+	public void displayMarks() {
+		System.out.println("The student mark is :78");
+		
+	}
+
+	@Override
+	public void getData() 
+	{
+		System.out.println("the name is sandip");	
+	}
+
+	@Override
+	public void displayData() {
+	
+		System.out.println("the student data is about sandip");
+	}
+	public static void main(String[] args) {
+		Interfaceexample ob=new Interfaceexample();
+		ob.getData();
+		ob.getMarks();
+		ob.displayData();
+		ob.displayMarks();
+		
+	}
+}
+---------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
