@@ -1686,6 +1686,9 @@ public static void main(String[] args)
 }
 ------------------------------------------------------------------------------------------------------
 
+Finally :- work of finally is same as catch.It will catch the exception.but it will display the system defined error message.It definetly exceute if the try is successful or not it does not matter.
+so we write the closing of connestion ,closing of files etc.
+-----------------------------
  
 
 
