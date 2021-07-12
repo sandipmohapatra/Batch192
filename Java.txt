@@ -1689,7 +1689,108 @@ public static void main(String[] args)
 Finally :- work of finally is same as catch.It will catch the exception.but it will display the system defined error message.It definetly exceute if the try is successful or not it does not matter.
 so we write the closing of connestion ,closing of files etc.
 -----------------------------
- 
+example-6
+-------------------------------
+package saturday;
+import java.util.*;
+public class Test 
+{
+public static void main(String[] args) 
+{
+	
+	try
+	{
+	Scanner ob=new Scanner(System.in);
+	System.out.println("enter 2 nos");
+	int a=ob.nextInt();
+	int b=ob.nextInt();
+	int c=a/b;
+	System.out.println("the result is "+c);
+	}
+	catch(Exception x) //handle all type of error
+	{
+		System.out.println("the inner error is "+x);
+	}
+	try
+	{
+	Scanner ob=new Scanner(System.in);
+	System.out.println("enter 1 no");
+	int d=ob.nextInt();
+	}
+	catch(Exception x) //handle all type of error
+	{
+		System.out.println("the out error is "+x);
+	}
+	
+		finally
+		{
+			System.out.println("this is end of the program");
+		}
+	
+		}
+}
+------------------------------------------------------------------------------------------------------
+Exception
+------------------------- 
+They are 2 types
+--------------------------
+1)checked exception :-(compulsary)
+we have to check the exception then only the program will start execution.
+example:- 1)SQLException 2)IOException 3)InterruptedException 3)ServletException etc.
+
+2)unchecked exception:-
+This is optional the program will execute but make get exception in between.
+example:-1) ArithmeticException 2)ArrayIndexOutOfBound Exception
+3)NumberFormatException 4)InputMismatch Exception etc.....
+-------------------------------------------------------------------------------------------------
+Mostly we use throws Exception to handle the checked Exception.
+The super class of exception is Throwable.
+throws exception does not have any body.
+--------------------------------------------------------------------
+example-7
+---------------------------------
+package saturday;
+import java.util.*;
+public class Test extends Thread
+{
+public static void main(String[] args) throws InterruptedException 
+{
+for(int i=1;i<=10;i++)
+{
+	System.out.println(i);
+	sleep(1000);//it will interupt the flow of control.so we have to check the exception then it will allow to 
+}							//execute the program.
+}}
+
+--------------------------------------------------------------------
+throw exception :- 
+This is use to handle the user defined exception.
+example:- mark should be greater than zero.
+age should be greater than 18 to vote.
+salary should be greater than 15k.
+---------------------------------------------------------------------------------
+example-8
+-----------------------
+package saturday;
+import java.util.*;
+public class Test extends Thread
+{
+public static void main(String[] args) throws Exception  
+{
+Scanner ob=new Scanner(System.in);
+System.out.println("enter your age");
+int age=ob.nextInt();
+if(age<=18)
+{
+	throw new Exception("your are not eligible to vote");
+}
+else
+{
+	System.out.println("your are eligible to vote");
+}
+}}
+-------------------------------------------------------------------
+		
 
 
 
