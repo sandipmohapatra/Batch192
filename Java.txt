@@ -1543,6 +1543,31 @@ public static void main(String[] args)
 	System.out.println("this is end of the program");
 }
 }
+-----------------------
+package saturday;
+import java.util.*;
+public class Test 
+{
+	public static void main(String[] args) 
+	{
+		try
+		{
+			int a[]=new int[5];
+			Scanner ob=new Scanner(System.in);
+			System.out.println("enter 5 nos");
+			for(int i=0;i<5;i++)
+				a[i]=ob.nextInt();
+			System.out.println(" 5 nos are");
+			for(int i=0;i<=5;i++)
+				System.out.println(a[i]);
+		}
+		catch(Exception x)
+		{
+			x.printStackTrace();
+		}
+		System.out.println("this is the end of the program");
+	}
+}
 -----------------------------------------
 Example-2
 try with multiple catch
@@ -1790,6 +1815,152 @@ else
 }
 }}
 -------------------------------------------------------------------
+example-9
+---------------------
+package saturday;
+import java.util.*;
+public class Test extends Thread
+{
+public static void main(String[] args) throws Exception  
+{
+Scanner ob=new Scanner(System.in);
+try
+{
+System.out.println("enter your age");
+int age=ob.nextInt();
+if(age<=18)
+{
+	throw new Exception("your are not eligible to vote");
+}
+else
+{
+	System.out.println("your are eligible to vote");
+}
+}
+catch(Exception ae)
+{
+	ae.printStackTrace();
+}
+System.out.println("This is throw exception");
+}}
+-----------------------------------------------------------------------------
+String :-
+-----------
+1)String is a class in java.lang package
+2)In java string is also considered as datatype
+3)String object is Immutable(cannot be changed)
+4)When we assign a value it create a new object and the value remains in memory.
+Example :- String s1=“hello”;
+ String s2=new String(“hello”);
+Method :- length(),isEmpty(),charAt(),equals(),startWith(),endsWith(),indexOf(),lastIndexOf(),toUpperCase(),toLowerCase()
+-----------------------------------------------------------------------------------------------------------------------
+String Buffer:-
+---------------------
+1)It is a peer class of string and provides all functions of string.
+2)It is mutable (can be modified) and expanded dynamically.
+3)It is synchronized
+Ex:-1) StringBuffer b=new StringBuffer(“hello”);
+We pass “hello” to StringBuffer object “b”
+2)StringBuffer b=new StringBuffer(50);
+We can store 50 or more character .It is mutable so it expands dynamically
+3)StringBuffer b=new StringBuffer()
+StringBuffer object b is created with default capacity 16 character.
+4)Methods :- append(),insert(),delete(),reverse()
+--------------------------------------------------------------------------------------------
+String Builder :-
+--------------------
+1)It is same as String Buffer
+2)String Builder is not synchronized
+3)String Buffer class takes more time to execute than StringBuilder.
+-----------------------------------------------------------------------------------------------
+String s1=”sandip”;
+String s1=”kumar”;
+Now the reference s1 contain new data the old object data is lost.
+It is known as unreferenced object and garbage collector will remove it from memory.
+---------------------------------------------------------
+example-1
+-------------------
+package First.Friday;
+class Firstprg
+{	public static void main(String args[])
+	{
+	String s1="Mphasis and Global soft";
+	System.out.println(s1);
+	System.out.println(s1.toUpperCase());
+	System.out.println(s1.toLowerCase());
+	System.out.println(s1.indexOf('a'));
+	System.out.println(s1.lastIndexOf('a'));
+	System.out.println(s1.substring(5));
+	System.out.println(s1.substring(5,10));
+	System.out.println(s1.startsWith("Mp"));
+	System.out.println(s1.endsWith("ft"));
+	System.out.println(s1.replace("soft","software"));
+	String ss="Mphasis and Global soft,mumbai";
+	System.out.println(ss);
+                  System.out.println("the length of string="+ss.length());
+	System.out.println(ss.replace("mumbai","Bangalore"));
+	char name[]=s1.toCharArray();//convert string to char array
+	int leng=name.length;
+	System.out.println("length of an array="+leng);
+                  for(int i=0;i<leng;i++)
+	{
+		System.out.println(name[i]);
+	}}}
+----------------------------------------------------------------------
+package First.Friday;
+
+public class Secondprg 
+{
+	  public static void main(String args[])
+	{  int age=25;
+	StringBuffer s=new StringBuffer(" She  is ");
+	StringBuffer s1=new StringBuffer("Hello to HP ");
+	System.out.println("string buffer="+s);
+	System.out.println("s append="+s.append(age));
+	System.out.println("s append="+s.append(" years old."));
+	System.out.println("entire string="+s.toString());//convert object to string
+	System.out.println("length="+s.length());
+	System.out.println("capacity="+s.capacity());
+	System.out.println("s1="+s1);
+	System.out.println("charAt="+s1.charAt(1));
+	s1.setCharAt(1,'i');
+	s1.setLength(5);
+	System.out.println("s1="+s1);
+	System.out.println("set insert="+s1.insert(5,"welcome"));
+	System.out.println("to delete="+s1.delete(5,6));
+	System.out.println("to reverse="+s1.reverse());
+	System.out.println(s1);
+	}}
+------------------------------------------------------------
+example-2
+------------------------
+package saturday;
+import java.util.*;
+public class Test 
+{
+	public static void main(String[] args) 
+	{	
+		String s1="apple";
+		String s2="apple";
+		String s3=new String("apple");
+		String s4=new String("apple");
+		if(s1==s2) //hashcode or memory blocks are same new memory block will not be created.
+			System.out.println("true");
+		else
+			System.out.println("false");
+		
+		if(s2==s3)
+			System.out.println("true");
+		else
+			System.out.println("false");
+		
+		if(s3.equals(s4))//compare the string
+			System.out.println("true");
+		else
+			System.out.println("false");
+		
+	}}
+-----------------------------------------------------
 		
 
 
