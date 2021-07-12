@@ -1961,7 +1961,49 @@ public class Test
 		
 	}}
 -----------------------------------------------------
-		
+Collection :- It is a collection of Objects.
+difference between array and collection :- array size is what we assign.but in collection it grows dynamically.
+int a[]=new int[5];
+----------------------------------
+TreeSet ts=new TreeSet()
+ts.add();
+-------------------------------------
+collection 	is a collection of objects.
+---------------------------------------------
+example 1:-
+-------------------
+package saturday;
+import java.util.*;
+public class Test 
+{
+	public static void main(String[] args) 
+	{	//difference between array and collection
+		int a[]=new int[5];//the limit is 5 we can enter 5 elements.
+		HashSet ts=new HashSet();//dynamically increase.
+		Student1 obj1=new Student1(101,"sandip","bangalore");
+		Student1 obj2=new Student1(102,"kiran","bangalore");
+						ts.add(obj1);  //collection of object
+						ts.add(obj2);
+						System.out.println(ts);
+					}}
+----------------------------------------------------
+package saturday;
+public class Student1 
+{
+int rollno;
+String name,address;
+public Student1(int rollno, String name, String address) {
+	super();
+	this.rollno = rollno;
+	this.name = name;
+	this.address = address;
+}
+@Override
+public String toString() {
+	return "Student [rollno=" + rollno + ", name=" + name + ", address=" + address + "]";
+}
+}
+--------------------------------------------------------------------------------
 
 
 
