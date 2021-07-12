@@ -1494,9 +1494,56 @@ public static void main(String[] args)
 }
 }
 ------------------------------------------------------------------
+Exception Handling (error handling)
+------------------------------------------------------------
+we have 3 types of error
+1)compile time
+2)logical error
+3)runtime error 
+* In exception handling we will discuss about only runtime error. 
+example:-
+1)entering character in place of number.
+2)dividing a number by zero.
+3)crossing the array limit.
+The main aim of exception handling is we don't want the program to terminate in between.the program should display an error message but the flow of the program should be till the end.
+  
+1)The compile time error is due to spelling mistake.missing of semi-colon,non closing of brases.so we have to manually do the correction.
 
+2)The logical error is due to wrong logic.we have to manually rectify it.
 
-
+----------------------------------------------------------------------------------------------------------------------  
+To handle the runtime exception we have to use 5 keywords.
+1)try
+2)catch
+3)finally
+4)throw
+5)throws.
+--------------------------------------------------------
+Example-1
+---------------------
+package saturday;
+import java.util.*;
+public class Test 
+{
+public static void main(String[] args) 
+{
+	try
+	{
+	Scanner ob=new Scanner(System.in);
+	System.out.println("enter 2 nos");
+	int a=ob.nextInt();
+	int b=ob.nextInt();
+	int c=a/b;
+	System.out.println("the result is "+c);
+	}
+	catch(Exception ae)
+	{
+		System.out.println("the error is "+ae);
+	}
+	System.out.println("this is end of the program");
+}
+}
+-----------------------------------------
 
 
 
