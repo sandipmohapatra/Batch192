@@ -1544,6 +1544,165 @@ public static void main(String[] args)
 }
 }
 -----------------------------------------
+Example-2
+try with multiple catch
+--------------------------------
+package saturday;
+import java.util.*;
+public class Test 
+{
+public static void main(String[] args) 
+{
+	try
+	{
+	Scanner ob=new Scanner(System.in);
+	System.out.println("enter 2 nos");
+	int a=ob.nextInt();
+	int b=ob.nextInt();
+	int c=a/b;
+	System.out.println("the result is "+c);
+	}
+		catch(ArithmeticException x)//only ArithmeticException
+	{
+		System.out.println("the errorr is "+x);
+	}
+	catch(InputMismatchException x)//only InputMismatchException
+	{
+		System.out.println("the erroor is "+x);
+	}
+	catch(Exception x) //handle all type of error
+	{
+		System.out.println("the error is "+x);
+	}
+	System.out.println("this is end of the program");
+}
+}
+--------------------------------------------------------------------
+try-finally
+--------------------
+example-3
+-----------------------
+package saturday;
+import java.util.*;
+public class Test 
+{
+public static void main(String[] args) 
+{
+	try
+	{
+	Scanner ob=new Scanner(System.in);
+	System.out.println("enter 2 nos");
+	int a=ob.nextInt();
+	int b=ob.nextInt();
+	int c=a/b;
+	System.out.println("the result is "+c);
+	}
+		finally
+		{
+			System.out.println("this is end of the program");
+		}
+	
+}
+}
+---------------------------------------------------------------------------------------
+Difference between try-catch and try-finally
+--------------------------------------------------------------
+If the try is successful then the catch will execute.(means there is runtime error)exmple- 4/0
+If the try is un-successful then the catch will not execute.(means no runtime error)example-4/2
+------------------------------------------------------------------
+If the try is successful or not it does not matter but the finally block will definetly execute.
+so we write the connection closing and file closing inside the finally block.
+--------------------------------------------------------
+example-4
+try-catch-finally
+----------------------------
+package saturday;
+import java.util.*;
+public class Test 
+{
+public static void main(String[] args) 
+{
+	try
+	{
+	Scanner ob=new Scanner(System.in);
+	System.out.println("enter 2 nos");
+	int a=ob.nextInt();
+	int b=ob.nextInt();
+	int c=a/b;
+	System.out.println("the result is "+c);
+	}
+	catch(Exception x) //handle all type of error
+	{
+		System.out.println("the error is "+x);
+	}
+		finally
+		{
+			System.out.println("this is end of the program");
+		}
+	
+		}
+}
+----------------------------------------------------------------------
+Nested try block
+------------------------------ 
+example-5
+--------------------
+package saturday;
+import java.util.*;
+public class Test 
+{
+public static void main(String[] args) 
+{
+	try
+	{
+	try
+	{
+	Scanner ob=new Scanner(System.in);
+	System.out.println("enter 2 nos");
+	int a=ob.nextInt();
+	int b=ob.nextInt();
+	int c=a/b;
+	System.out.println("the result is "+c);
+	}
+	catch(Exception x) //handle all type of error
+	{
+		System.out.println("the inner error is "+x);
+	}
+	Scanner ob=new Scanner(System.in);
+	System.out.println("enter 1 no");
+	int d=ob.nextInt();
+	}
+	catch(Exception x) //handle all type of error
+	{
+		System.out.println("the out error is "+x);
+	}
+	
+		finally
+		{
+			System.out.println("this is end of the program");
+		}
+	
+		}
+}
+------------------------------------------------------------------------------------------------------
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
