@@ -2238,6 +2238,26 @@ public class SetExample
 
 	}}
 -----------------------------------------------------------------
+example-7
+------------------
+package Collection;
+import java.util.*;
+public class SetExample
+{
+	public static void main(String[] args) {
+		ArrayList<String> list=new ArrayList<String>();
+		list.add("Mango");
+		list.add("Apple");
+		list.add("Banana");
+		list.add("Grapes");
+		Collections.sort(list);//collection class has static methods like sort to sort the elements .
+		Iterator itr=list.iterator();
+		while(itr.hasNext())//return boolean value
+		{
+			System.out.println(itr.next());//returns the next element in the iteration
+		}
+	}}
+-----------------------------------------------------------------
 
 
 
