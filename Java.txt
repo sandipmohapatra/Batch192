@@ -2078,10 +2078,10 @@ al.clear();	//remove all the data from the arraylist.
 System.out.println(al);}}
 ----------------------------------------------------------
 Wrapper class:- all data types in java are also classes.
-1)byte - Byte
-2)short - Short
-3)int - Integer
-4)long - Long
+1)byte - Byte ----->-128 to 128
+2)short - Short --->
+3)int - Integer --->- 65789 to +65789
+4)long - Long --->
 5)float - Float
 6)double - Double
 7)char - Character
@@ -2113,12 +2113,58 @@ int sum=x+y+z;
 System.out.println("the sum is "+sum);
 }}
 ---------------------------------------------------------------------------------
+Type casting
+---------------------
+converting data from one datatype to other.
+example :- 
+byte a=10; int b=a; (it is called as implecit type casting small memory is converted to bigger memory block)
+int a=10;byte b=a;(it is called as explicit type casting bigger memory is converted to smaller memory block)
 
 
+example 1:
+public class Test3
+{
+public static void main(String[] args) 
+{
+	byte a=10;
+	int b=a;
+	System.out.println(b);
+}
+}
+-------------------------------------------------------
+example-2
+-------------
+public class Test3
+{
+public static void main(String[] args) 
+{
+	int a=10;
+	byte b=(byte)a;
+	System.out.println(b);
+}
+}
+-----------------------------------------------------------------
+example-3
+-----------------------
+package Collection;
+import java.util.*;
+public class SetExample
+{
+	public static void main(String[] args) {
+			HashSet hs=new HashSet();
+	   System.out.println(hs.isEmpty());//return boolean value(true)
+	   System.out.println(hs.size());
+	    hs.add(10);    hs.add(30);    hs.add(40);    hs.add(80);    hs.add(100);     hs.add(10);
+	   System.out.println(hs);
+	   System.out.println(hs.isEmpty());
+	   System.out.println(hs.size());
+	   System.out.println(hs.contains(30));
+	   System.out.println(hs.contains(300));
+	      hs.remove(100);
+	   System.out.println(hs);     hs.clear();System.out.println(hs);   System.out.println(hs.size());
 
-
-
-
+}}
+-------------------------------------
 
 
 
