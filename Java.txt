@@ -2104,7 +2104,8 @@ public class SetExample
 String a=k[0];
 String b=k[1];
 String c=k[2];
-System.out.println(a);System.out.println(b);
+System.out.println(a);
+System.out.println(b);
 System.out.println(c);
 int x=Integer.parseInt(a);
 int y=Integer.parseInt(b);
@@ -2165,7 +2166,25 @@ public class SetExample
 
 }}
 -------------------------------------
-
+example-4
+-----------------
+package Collection;
+import java.util.*;
+public class SetExample
+{
+	public static void main(String[] args) {
+	HashSet hs=new HashSet();
+	    hs.add(10);
+	    hs.add(30);
+	    hs.add(40);
+	    hs.add(80);
+	    hs.add(100);
+	   System.out.println(hs);
+	//To retrieve obj by for each 
+	   for(Object obj:hs)  //we are iterating the data by using for each loop.
+	{
+	   System.out.println(obj);
+	  }	}}
 
 
 
