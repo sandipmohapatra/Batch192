@@ -2074,13 +2074,45 @@ System.out.println(al);
 al.remove(2);                //remove 60
 System.out.println(al);
 al.set(4,1000);              //replace 90 with 1000
+al.clear();	//remove all the data from the arraylist.
 System.out.println(al);}}
 ----------------------------------------------------------
+Wrapper class:- all data types in java are also classes.
+1)byte - Byte
+2)short - Short
+3)int - Integer
+4)long - Long
+5)float - Float
+6)double - Double
+7)char - Character
+8)boolean -Boolean
+9)String
+----------------------------
+All the wrapper classes have methods they all belongs to lang package.
+------------------
 
-
-
-
-
+package Collection;
+public class SetExample
+{
+	public static void main(String k[]) 
+	//public because it has to be used outside the package in JVM
+	//we will not create any object to call this main ()
+	//void means there is no return
+	//main is the function name JVM will do pattern matching
+	//String h[] is a array of string arguments that can be taken during run time.
+	{
+String a=k[0];
+String b=k[1];
+String c=k[2];
+System.out.println(a);System.out.println(b);
+System.out.println(c);
+int x=Integer.parseInt(a);
+int y=Integer.parseInt(b);
+int z=Integer.parseInt(c);
+int sum=x+y+z;
+System.out.println("the sum is "+sum);
+}}
+---------------------------------------------------------------------------------
 
 
 
