@@ -2316,8 +2316,60 @@ public class SetExample
 	     System.out.println(hs);
 	}}
 -------------------------------------
-
-
+HashMap :- in this we enter key and value pair.
+Set set=hs.entrySet(); //HashMap is converted to set we have entrySet() in HashMap .Returns a Set view of the 			mappings contained in this map 
+     Iterator itr=set.iterator();
+     while(itr.hasNext())
+     {
+     Map.Entry en=(Map.Entry)itr.next();//typecasting the next() element with Map.Entry 
+     System.out.println(en.getKey()+"   "+en.getValue());//Map.Entry has 2 methods getKey() and getValue()
+----------------------------------------------------------------------------------------
+for(Map.Entry m:map.entrySet())
+----------------------------------------------------
+Example:9
+----------------------
+package Collection;
+import java.util.*;
+public class SetExample
+{
+	public static void main(String[] args) {
+		 Scanner obj=new Scanner(System.in);
+	     System.out.println("enter the key and name");
+	     int b=obj.nextInt();
+	     String st=obj.next();
+	     HashMap<Integer,String> hs=new HashMap<Integer,String>();
+	     hs.put(1,"raj");
+	     hs.put(2,"seetha");
+	     hs.put(3,"reeta");
+	     System.out.println(hs);
+	     hs.put(4,"meetha");
+	     hs.put(5,"venu");
+	     hs.put(6,"pankaj");
+	     hs.put(7,"raj");
+	     hs.put(8,"lakshmi");
+	     hs.put(9,"susmita");
+	     hs.put(b,st);
+	     System.out.println(hs);
+	     System.out.println("enter the rollno whose name you want to display");
+	     int rollno=obj.nextInt();
+	   /*  Set set=hs.entrySet(); 
+	     Iterator itr=set.iterator();
+	     while(itr.hasNext())
+	     {
+	     Map.Entry en=(Map.Entry)itr.next();
+	     System.out.println(en.getKey()+"   "+en.getValue());
+	     }*/
+	        
+	     for(Map.Entry<Integer, String> entry:hs.entrySet())
+	     {    
+	         if(rollno==entry.getKey())  
+	         {
+	        	 System.out.println("The name is "+entry.getValue());
+	         }
+	         
+	     }
+	}}
+-------------------------------------------------------------------------
 
 
 
