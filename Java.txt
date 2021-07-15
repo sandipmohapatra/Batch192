@@ -2559,7 +2559,6 @@ System.out.println(ob1.isAlive());	//it returns boolean value
 }
 --------------------------------------
 package ThreadExample;
-
 public class MainClass 
 {
 public static void main(String[] args) throws InterruptedException 
@@ -2575,12 +2574,41 @@ ob3.start();
 System.out.println(ob1.isAlive());	//it returns boolean value
 try  
 {    
-    ob2.join();    //this is work when the thread ob1 is died.
+    ob1.join();    //Waits for this thread to die. Then other threads will work when this thread ob1 is died.
 }catch(Exception e){System.out.println(e);}    
 System.out.println(ob1.isAlive());	//it returns boolean value
 }
 }
 -------------------------------------------------------------
+Example 4:-
+-----------------------
+join :- after the completion of the current thread the other threads will execute.
+-------------
+package ThreadExample;
+
+public class MainClass 
+{
+public static void main(String[] args) throws InterruptedException 
+{
+Thread1 ob1=new Thread1();
+Thread1 ob2=new Thread1();
+Thread1 ob3=new Thread1();
+ob1.start();//this will call the run method
+System.out.println(ob1.isAlive());	//it returns boolean value
+try  
+{    
+    ob1.join();    //when the thread ob1 is died then the thred2 and thread3 will start executing.
+}catch(Exception e)
+{System.out.println(e);}    
+ob2.start();
+System.out.println(ob1.isAlive());	//it returns boolean value
+ob3.start();
+System.out.println(ob1.isAlive());	//it returns boolean value
+System.out.println(ob1.isAlive());	//it returns boolean value
+System.out.println(ob3.isAlive());	//it returns boolean value
+}
+}
+------------------------------------------------
 
 
 
