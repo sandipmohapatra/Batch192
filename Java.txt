@@ -2737,7 +2737,123 @@ class Second implements Runnable
 			}
 }
 -------------------------------------------------------------------
+Files
+--------------
+File 
+---------
+It is used to Store and manage data .
+Reading or writing of data in a file can be done in byte or character format.
+The process of reading and writing object into file is known as serialization.  
+The java.io package contain a large number of stream classes that provide capacity 
+for processing all types of data.
+1)Byte stream class provide support for handling I/O operation on byte.
+2)Character stream classes provide support for handling I/O operation on character. 
 
+Stream :-
+---------------
+Java uses the concept of streams to represent the ordered sequence of data ,
+a common character shared by all the input/output device.
+A stream in java is a path along which data flows.
+It is a sequence of data or bytes traveling from source to destination.
+There are 2 types of stream
+1)byte stream
+------------------
+It has 2 abstract class
+1)InputStream-read
+2)OutputStream-write
+-----------------------------------------------------------------------------------------------------
+2)character stream
+------------------------
+There is has 2 abstract class 
+1)Reader 2)writer
+-----------------------------------------------------------
+IO Exception:-
+-----------------
+1)EOFException
+2)FileNotFoundException
+3)InterruptedIOException
+4)IOException
+--------------------
+Serialization :- Serialization is the process of writing the data of an object to a
+ byte stream.
+This is useful when we want to save the state of a program into storage area such 
+as file.
+Later we restore these object by using deserialization.
+
+Only an Object that implements the serializable interface can be saved and restored 
+by the serializable facilities .
+The serializable interface have no methods(marker Interface)
+The writeObject() method of ObjectOutputStreams used to serialize a object.
+The readObject() method of ObjectIntputStreams used to deserialize a object.
+Byte Stream:- 
+
+1)BufferInputStream/BufferOutputStream
+2)FileInputStream/FileOutputStream
+3)ObjectInputStream/ObjectOutputStream
+4)DataInputStream/DataOutputStream
+
+------------------------------------------------------------------------------------------------------------------------
+
+Character Stream:-
+1)BufferReader/BufferWriter
+2)FileReader/FileWriter
+
+------------------------------------------------------------
+InputStreamReader/OutputStreamReader  ->bridge from character stream to byte stream.
+
+
+File class Methods:-
+
+1)boolean isFile():- This method returns true if the file object contains a filename,
+otherwise false.
+
+2)booelan isDirectory():-This method returns true if the file object contains a 
+directory name.
+
+3)boolean canRead():-This method returns true if the file object contains a file 
+which is readable.
+
+4)booelan canWrite():-This method return true if the file is writeable.
+
+5)booelan canExcecute:- This method return true if the file is executable.
+
+6)boolean exists():-This method return true when the file object contains a file 
+or directory exists in the computer.
+
+7)String getParent():- This method return the name of parent directory of a file or 
+directory.
+
+8)String getAbsolutePath:- this method gives the absolute directory path.
+
+9)long length():- This method returns a  nummber that is the file size in bytes.
+
+10)boolean delete():- This method deletes the file .
+
+11)boolean createNewFile():- This method create a new file if file doesnot exists.
+
+12)boolean mkdir():-this method create the directory .
+
+example:-
+
+import java.io.*;
+class FileDemo
+{
+public static void main(String arg[])
+{
+String fname=arg[0];
+File f=new File(fname);
+System.out.println("file name:"+f.getName());
+System.out.println("file path:"+f.getPath());
+System.out.println("file absolutepath:"+f.getAbsolutePath());
+System.out.println("file exists:"+f.exists());
+if(f.exists())
+{
+System.out.println("file canwrite:"+f.canWrite());
+System.out.println("file canread:"+f.canRead());
+System.out.println("file isdirectory:"+f.isDirectory());
+System.out.println("file length:"+f.length());
+}}}   
+----------------------------------------------------------------------------------------------------------------
 
 
 
