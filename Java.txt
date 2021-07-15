@@ -2609,7 +2609,41 @@ System.out.println(ob3.isAlive());	//it returns boolean value
 }
 }
 ------------------------------------------------
+Example-5
+--------------------
+package ThreadExample;
+public class Thread1 extends Thread
+{
+	int i;
+public void run()
+{
+	for(i=1;i<=10;i++ )
+	{
+		System.out.println(Thread.currentThread().getName()+"  "+i); 
+		try {
+			sleep(1000);
+			
+		} 
+		catch (InterruptedException e) 
+		{
+		e.printStackTrace();
+		}}}}
 
+------------------------------------------
+package ThreadExample;
+public class MainClass 
+{
+public static void main(String[] args) throws InterruptedException 
+{
+Thread1 ob1=new Thread1();
+Thread1 ob2=new Thread1();
+Thread1 ob3=new Thread1();
+ob1.start();//this will call the run method
+ob2.start();
+ob3.start();
+}
+}
+-----------------------------------------------------------------
 
 
 
