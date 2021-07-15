@@ -2692,6 +2692,51 @@ class Second implements Runnable
 	}}
 -------------------------------------------------------------
 
+wap to find out who gets the movie tickets out of the 3 friends.
+There are 2 movie tickets only.
+--------------------------------------------------------------------------------------
+example-7
+---------------------
+package ThreadExample;
+
+class Second implements Runnable
+{
+	 public void run() {
+		for (int i = 1; i <=5; i++) {
+			try {
+				// thread to sleep for 500 milliseconds
+				//Thread.sleep(500);
+				System.out.println(Thread.currentThread().getName() +" "+i);
+			} catch (Exception e) {
+				System.out.println(e);
+			}	}	}
+
+	public static void main(String args[]) {
+		// creating three threads
+		Second obj = new Second();
+		Thread t1=new Thread(obj,"Akash");
+		Thread t2=new Thread(obj,"Susmita");
+		Thread t3=new Thread(obj,"Deepak");
+		System.out.println(t1.getPriority()); //default priority is 5
+		System.out.println(t2.getPriority());
+		System.out.println(t3.getPriority());
+		t1.setPriority(10);
+		t2.setPriority(4);
+		t3.setPriority(1);
+		System.out.println(t1.getPriority()); //default priority is 5
+		System.out.println(t2.getPriority());
+		System.out.println(t3.getPriority());
+				// call run() method
+		t1.start();
+		t2.start();
+		t3.start();
+		// suspend t2 thread
+		t2.suspend();
+		t2.resume();
+		// call run() method
+			}
+}
+-------------------------------------------------------------------
 
 
 
