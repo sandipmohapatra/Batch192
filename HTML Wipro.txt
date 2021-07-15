@@ -1,6 +1,6 @@
 1)split:- Wipro,learning,center
 2)onBlur() :- event fired when the form element looses the focus.button,textField ,input,label,select,textarea 
-3)roundup()   is -21
+3)round()   is -21
 4)merge 2 cells horizontally :-colsspan=2
 5)placeHolder is used for giving hints what has to inserted. 
 6)<select> is used for drop down box.
