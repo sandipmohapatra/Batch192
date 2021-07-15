@@ -2737,9 +2737,7 @@ class Second implements Runnable
 			}
 }
 -------------------------------------------------------------------
-Files
---------------
-File 
+ Files 
 ---------
 It is used to Store and manage data .
 Reading or writing of data in a file can be done in byte or character format.
