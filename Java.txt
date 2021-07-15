@@ -2871,6 +2871,25 @@ class b
 	fos.close();
 	}}
 ----------------------------------------------------
+example-3
+-------------------
+//copy data from one file to file
+import java.io.*;
+class b
+{  
+     public static void main(String args[]) throws Exception
+      {
+FileInputStream fis=new FileInputStream("First.txt");//read data from the file
+FileOutputStream fos=new FileOutputStream("demo2.doc");//write data into a file
+int ch;
+while((ch=fis.read())!=-1)
+{
+fos.write(ch);
+}
+fis.close();fos.close();
+System.out.println("file copied.....");
+ }}
+--------------------------------------
 
 
 
