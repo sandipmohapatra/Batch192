@@ -118,7 +118,12 @@ select * from mp192result where total >240 and name like '%a';//anything startin
 ---------------------------------------------------------
 select * from mp192result where total <240 and name like 'a%';//starting with a later anything
 -------------------------------------------------------
+select * from mp192result where name like '_k%';
 
+select * from mp192result where name like '___s%';
+
+select * from mp192result where name like '__i%';
+-------------------------------------------------------------------------------------------
 
 
 
