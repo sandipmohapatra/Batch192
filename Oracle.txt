@@ -28,7 +28,7 @@ insert into mp192result values(103,'trisha',88,87,88);
 alter table mp192result add total number;
 select * from mp192result;
 update mp192result set total=phy+chem+bio;
-alter table mp192result add avg number;
+alter table mp192result add avg number(5,2);-----------------------999.99
 update mp192result set avg=total/3;
 update mp192result set avg=round(total/3,2);
 
@@ -36,3 +36,62 @@ alter table mp192result add grade varchar2(30);
 update mp192result set grade='First Division' where avg >=80;
 update mp192result set grade='Secong Division' where avg <80;
 ---------------------------------------------------------------------------------------------------
+Assignement
+-------------------------------
+Create table employee having accno,name,address,dept,salary,
+find ta =10% of salary
+find da =20% of salary
+find hra =30% of salary
+find tax =15% of salary
+and gross =salary+ta+da+hra-tax
+
+there should be 10 columns in the tabble.
+---------------------------------------------------------------------------------------------------
+DATA TYPES:-
+-------------------------------
+1)number :-size 38 digits   => number(5),number(9,2) to enter float  9999999.99
+2)character:-size 2000 bytes =>char(20)
+3)varchar2:-4000 bytes =>varchar2(15)
+4)date:-7 bytes  =>date  =>'21-jan-2019'
+5)long:-2gb
+6)raw:-store binary data ,size is 2000 bytes
+7)long raw:-2gb
+8)lob:-4 gb
+9)int,float
+10)varchar:-2000 bytes =>varchar(15)
+----------------------------------------------------------------------------------
+oracle database:-
+-------------------------- 
+operator :-
+---------------------------------------------------------------------------
+1)arithmatic operator :-  +,-,*,/                                          
+
+select idno,name,dob,salary+100 from student;
+
+select idno,name,dob,salary*12 from student;
+
+select idno,name,dob,salary/30 from student;
+
+select empid,name,salary+100 as Incrementsalary from student;
+
+select empid,name,salary*12 as Annualsalary from student;
+
+--------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
