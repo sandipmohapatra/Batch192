@@ -1,0 +1,8 @@
+creating table
+create table mp192student(empno number,name varchar2(30),address varchar2(30),dob date);
+
+insert data into the table
+insert into mp192student values(103,'susmita','bangalore','10-jun-1990')
+
+to view the table 
+select * from mp192student;
