@@ -89,8 +89,35 @@ select empid,name,salary*12 as Annualsalary from student;
 
 =>select * from student where salary != 6000;
 ----------------------------------------------------------------------------
+* select queries are temporary.
+--------------------------------------------------------------------------
+between and,not between ,in,not in,like,is null  			          
 
+=>select * from emp where sal between 2000 and 4000;
+					      
+=>select * from emp where deptno in(10,20);
+				                      
+=>select ename from emp where sal>=1000 and job like '%m';
 
+kiran
+=>select name from student where name like '_i%';
+
+=>select name from student where name like '__r%';					     
+ =>select * from emp where sal>=1500 and sal<=2500;
+					     
+ =>select * from emp where sal between 1500 and 2500;
+
+=>select empname,empcode,dob from employee1 where phoneno is null;
+
+=>select * from student where salary is null;
+select * from mp192result;
+
+select * from mp192result where total between 222 and 250;
+-------------------------------------------------------------------
+select * from mp192result where total >240 and name like '%a';//anything starting but end is a.
+---------------------------------------------------------
+select * from mp192result where total <240 and name like 'a%';//starting with a later anything
+-------------------------------------------------------
 
 
 
