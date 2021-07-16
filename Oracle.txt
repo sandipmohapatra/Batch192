@@ -18,4 +18,21 @@ update mp192student set phoneno=887766555 where empno=101;
 6)to add data to many data to a column
 update mp192student set phoneno=887766555 where empno in (102,103);
 
+-------------------------------------------------------
+create table mp192result(empno number,name varchar2(30),phy number,chem number,bio number);
 
+insert into mp192result values(101,'akash',78,67,78);
+insert into mp192result values(102,'susmita',79,87,78);
+insert into mp192result values(103,'trisha',88,87,88);
+
+alter table mp192result add total number;
+select * from mp192result;
+update mp192result set total=phy+chem+bio;
+alter table mp192result add avg number;
+update mp192result set avg=total/3;
+update mp192result set avg=round(total/3,2);
+
+alter table mp192result add grade varchar2(30);
+update mp192result set grade='First Division' where avg >=80;
+update mp192result set grade='Secong Division' where avg <80;
+---------------------------------------------------------------------------------------------------
