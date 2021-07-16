@@ -123,6 +123,8 @@ select * from mp192result where name like '_k%';
 select * from mp192result where name like '___s%';
 
 select * from mp192result where name like '__i%';
+
+select * from mp192result where name like '%s%';
 -------------------------------------------------------------------------------------------
 
 
