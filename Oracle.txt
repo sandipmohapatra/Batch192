@@ -77,7 +77,18 @@ select empid,name,salary+100 as Incrementsalary from student;
 select empid,name,salary*12 as Annualsalary from student;
 
 --------------------------------------------------------------------------------------------
+2)comparison operator :- =,>=,<=,>,<,!=,<> (not equal to)  
 
+=>select * from student where salary > 6000;
+
+=>select * from student where salary < 6000;
+
+=>select * from student where salary >= 6000;
+
+=>select * from student where salary <> 6000;
+
+=>select * from student where salary != 6000;
+----------------------------------------------------------------------------
 
 
 
