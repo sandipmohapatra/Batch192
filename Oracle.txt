@@ -140,6 +140,34 @@ select studentname ||  '  the rollno is  '||idno || ' the salary is '||salary ||
 
 select name||' got marks in phy is '||phy from mp192result;
 -----------------------------------------------------------------------------------------------------
+select * from mp192result where name='akash' and total=223;
+
+select * from mp192result where name='akash' or total=244;
+
+select * from mp192result where name='akash' and name not like 's%';
+
+select * from mp192result where name='akash' or name not like 's%';
+
+select name||' got marks in phy is '||phy from mp192result;
+
+select * from mp192result where total is null;
+
+delete from mp192result where empno=103;//particular row will be deleted.
+drop is use to drop the table;//the table structure will be also deleted.
+truncate table mp192result;//all the data will be deleted but 
+the table structure will be present. 
+
+clone a table
+
+select * from mp192result;
+select * from mp193result;
+
+create table mp193result as select * from mp192result;
+
+select distinct * from mp192result;
+---------------------------------------------------------------------------------------------------------------
+
+
 
 
 
