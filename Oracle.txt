@@ -126,8 +126,20 @@ select * from mp192result where name like '__i%';
 
 select * from mp192result where name like '%s%';
 -------------------------------------------------------------------------------------------
+4)logical operator :-and,or,not                                         
 
+ =>select * from emp where ename='smith' and sal=8000;
 
+==>select empcode,empname ,dob from employee1 where salary >25000 and empname not like '%d';
+
+5)concatenate operator :-  ||
+
+select name||' the rollno is '||rollno from student;
+
+select studentname ||  '  the rollno is  '||idno || ' the salary is '||salary ||' good ' from student;
+
+select name||' got marks in phy is '||phy from mp192result;
+-----------------------------------------------------------------------------------------------------
 
 
 
