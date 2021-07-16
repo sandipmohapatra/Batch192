@@ -1,8 +1,19 @@
-creating table
+1)creating table
 create table mp192student(empno number,name varchar2(30),address varchar2(30),dob date);
 
-insert data into the table
+2)insert data into the table
 insert into mp192student values(103,'susmita','bangalore','10-jun-1990')
 
-to view the table 
+3)to view the table 
 select * from mp192student;
+
+4)add a column to the table
+alter table mp192student add phoneno number;
+
+5)to add data to that column
+update mp192student set phoneno=887766555 where empno=101;
+
+6)to add data to many column
+update mp192student set phoneno=887766555 where empno in (102,103);
+
+
