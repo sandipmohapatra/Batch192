@@ -2,7 +2,9 @@
 create table mp192student(empno number,name varchar2(30),address varchar2(30),dob date);
 
 2)insert data into the table
-insert into mp192student values(103,'susmita','bangalore','10-jun-1990')
+insert into mp192student values(101,'sandip','bangalore','10-jun-1990')
+insert into mp192student values(102,'trisha','bangalore','11-jun-1990')
+insert into mp192student values(103,'susmita','bangalore','12-jun-1990')
 
 3)to view the table 
 select * from mp192student;
@@ -13,7 +15,7 @@ alter table mp192student add phoneno number;
 5)to add data to that column
 update mp192student set phoneno=887766555 where empno=101;
 
-6)to add data to many column
+6)to add data to many data to a column
 update mp192student set phoneno=887766555 where empno in (102,103);
 
 
