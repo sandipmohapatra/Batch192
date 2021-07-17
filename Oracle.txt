@@ -216,8 +216,13 @@ CREATE TABLE products
 );
 ---------------------------------------------------------------------------------------
 ON DELETE CASCADE :- if we delete the supplier_id from supplier table then all the columns from the products table refered to suppier table supplier_id will be deleted.  
-
-
+--------------------------------------------------------------------------------------------------
+insert into supplier values(103,'akash','akash');
+insert into products values(5,102);
+select * from products;
+select * from supplier;
+delete from supplier where supplier_id=101;
+-----------------------------------------------------------------------------------------------
 
 
 
