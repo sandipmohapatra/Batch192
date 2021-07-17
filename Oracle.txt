@@ -166,6 +166,36 @@ create table mp193result as select * from mp192result;
 
 select distinct * from mp192result;
 ---------------------------------------------------------------------------------------------------------------
+contrains in oracle 
+-------------------------------
+1)primary key :- if you assign a column as primary key we cannot enter duplicate values and we cannot keep the column empty or we cannot enter null value.example :- rollno,accno etc.
+
+2)not null :-if we declare a column as not null ,we cannot enter null value.
+
+3)unique :- if we enter the column as unique we cannot enter duplicate value.We can once enter null value.
+
+4)check :- if we make a column as check means we can give range or condition to that column.
+example:-1) salary should be > than 15000. 2)marks should be greater than 5 .....etc.
+
+5)foreign key:-this is a relational key.we can relate one table with other table primary key.There will parent and child relationship.This can contain duplicate records.we cannot delete a row from the parent/master table if it is used in the child table.we cannot make the child orphan.
+---------------------------------------------------------------------------------------------------------------------------
+example:-
+create table mp192stud(empno number primary key,name varchar2(30) not null,phoneno number unique,salary number(9,2) check(salary >15000))
+
+insert into mp192stud(name,empno,salary,phoneno) values('kiran',103,17000,9888766655);
+
+select * from mp192stud;
+
+create table mp192address(empno number references mp192stud,streetno number,sname char(30),city char(30));
+
+insert into mp192address values(101,10,'MG Road','Bangalore');
+insert into mp192address values(102,10,'MG Road','Bangalore');
+insert into mp192address values(104,10,'MG Road','Bangalore');
+
+delete from mp192stud where empno=101;//we have to delete the child record first then we can delete the parent record.
+-----------------------------------------------------------------------------------------------------------
+ 
+
 
 
 
