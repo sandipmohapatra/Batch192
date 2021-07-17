@@ -248,8 +248,15 @@ insert into details values(101,'sandip','1-jul-1995');//allowed
 
 insert into details values(101,'akash','1-jul-1995');//not allowed
 ----------------------------------------------------------------------------------------------
+rename a column in oracle:-
+------------------------------------------------
+column rename
+alter table details rename column rollno to roll_no;
 
-
+desc student_details;
+table rename
+ALTER TABLE details RENAME TO student_details;  
+---------------------------------------------------------------------------------
 
 
 
