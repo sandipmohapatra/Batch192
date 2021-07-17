@@ -248,18 +248,54 @@ insert into details values(101,'sandip','1-jul-1995');//allowed
 
 insert into details values(101,'akash','1-jul-1995');//not allowed
 ----------------------------------------------------------------------------------------------
-rename a column in oracle:-
+rename a column and table in oracle:-
 ------------------------------------------------
 column rename
+------------------------
 alter table details rename column rollno to roll_no;
+--------------------------------------------------------------------------
+table rename
+----------------------------
+ALTER TABLE details RENAME TO student_details;  
 
 desc student_details;
-table rename
-ALTER TABLE details RENAME TO student_details;  
 ---------------------------------------------------------------------------------
+autocommit is on (There is automatic commint(save));
+-----------------------------------------------------------------------------
+SQL Operations
+------------------------------------------------------------------------------------------------
+1)TL (transaction language) :-select
 
+2)DML(data manipulation langauge) :-insert,update,delete
+they are temporary .if we rollback it will come to previous state.
 
+3)DCL (data control language) :-grant,revoke
 
+create user amit identified by oracle;
+grant dba to amit;
+revoke dba from amit;
+
+4)DDL (data defination language) :-create,alter,drop
+
+5)TCL (Transaction control langauge) :- commit,rollback,savepoint.
+-----------------------------------------------------------------------------------------------------
+select * from studenttable;
+
+insert into studenttable values(103,'sunil',77);
+commit;
+once committed we cannot rollback;
+rollback;
+---------------------------------------------------------
+savepoint a1;
+rollback to a1;
+-------------------------------------------------------------
+you should be in system user;
+---------------------------------------------------------
+create user akash identified by akash;
+grant dba to akash;
+revoke dba from akash;
+drop user akash cascade;
+-------------------------------------------------------------------------
 
 
 
