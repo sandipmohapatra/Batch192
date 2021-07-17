@@ -223,7 +223,31 @@ select * from products;
 select * from supplier;
 delete from supplier where supplier_id=101;
 -----------------------------------------------------------------------------------------------
+composite key:- To make 2 or more column as primary key
+--------------------------------
+create table studenttable
+( rollno number not null
+, name varchar2(20) not null
+, marks number not null   
+, primary key (rollno,name,marks)
+, unique (rollno,name)
+);
+----------------------------------------------
+insert into studenttable values(101,'sandip',78);
+insert into studenttable values(101,'kiran',78);
+insert into studenttable values(102,'kiran',78);
+-------------------------------------------
+create table details
+( rollno number not null
+, name varchar2(20) not null
+, dob date
+, foreign key (rollno,name) references studenttable (rollno,name))
+--------------------------------------------------------------------------------------------------------
 
+insert into details values(101,'sandip','1-jul-1995');//allowed
+
+insert into details values(101,'akash','1-jul-1995');//not allowed
+----------------------------------------------------------------------------------------------
 
 
 
