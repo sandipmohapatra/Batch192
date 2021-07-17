@@ -166,7 +166,7 @@ create table mp193result as select * from mp192result;
 
 select distinct * from mp192result;
 ---------------------------------------------------------------------------------------------------------------
-contrains in oracle 
+contraint in oracle 
 -------------------------------
 1)primary key :- if you assign a column as primary key we cannot enter duplicate values and we cannot keep the column empty or we cannot enter null value.example :- rollno,accno etc.
 
@@ -194,9 +194,29 @@ insert into mp192address values(104,10,'MG Road','Bangalore');
 
 delete from mp192stud where empno=101;//we have to delete the child record first then we can delete the parent record.
 -----------------------------------------------------------------------------------------------------------
- 
+ create bank table :- accno pk,name,balance
+create transaction table :- accno fk,trans,amount
+--------------------------------------------------------------------------------
+example-2
+--------------------
+CREATE TABLE supplier
+( supplier_id numeric(10) not null ,
+  supplier_name varchar2(50) not null,
+  contact_name varchar2(50),
+  CONSTRAINT supplier_pk PRIMARY KEY (supplier_id)
+);
 
+---------------------------------------------------------------------------------------------------
+CREATE TABLE products
+( product_id numeric(10) not null,
+  supplier_id numeric(10) not null,
+  CONSTRAINT fk_supplier 
+    FOREIGN KEY (supplier_id)
+    REFERENCES supplier(supplier_id)
+    ON DELETE CASCADE
+);
 
+---------------------------------------------------------------------------------------
 
 
 
