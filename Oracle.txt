@@ -205,7 +205,6 @@ CREATE TABLE supplier
   contact_name varchar2(50),
   CONSTRAINT supplier_pk PRIMARY KEY (supplier_id)
 );
-
 ---------------------------------------------------------------------------------------------------
 CREATE TABLE products
 ( product_id numeric(10) not null,
@@ -215,9 +214,8 @@ CREATE TABLE products
     REFERENCES supplier(supplier_id)
     ON DELETE CASCADE
 );
-
 ---------------------------------------------------------------------------------------
-
+ON DELETE CASCADE :- if we delete the supplier_id from supplier table then all the columns from the products table refered to suppier table supplier_id will be deleted.  
 
 
 
