@@ -348,6 +348,22 @@ update student6 set per=25/25 *100;
 3)select comm,nvl(comm,0) from emp; 
  //null in oracle is not zero.the value is yet to be defined..
 
+nvl :- null value.
+In oracle null value means the value yet to be defined.
+
+alter table mp192stud add comm number;
+
+update mp192stud set comm=1000 where empno in(101,103,105,106);
+
+select * from mp192stud where comm is null;
+
+select comm,nvl(comm,0) from mp192stud;
+
+select salary+nvl(comm,0) from mp192stud;
+
+select salary+comm from mp192stud;
+----------------------------------------------------------------------------------
+
 4)select * from emp where to_char(hiredate,'D') in (1,2,6); 
 (employee who have joined either on sunday,monday,friday)
 -------------------------------------------------------------
@@ -391,6 +407,8 @@ The SQL HAVING Clause
 The HAVING clause was added to SQL because the WHERE keyword could not be used with aggregate functions.
 
 select deptno from employeex group by deptno having min(salary) >= 2500;
+
+select count(empno),salary from mp192stud group by salary;
 --------------------------------------------------------------------------------------------------------------------------------------
 
 
