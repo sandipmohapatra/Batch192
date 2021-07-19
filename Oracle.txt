@@ -324,5 +324,55 @@ SELECT ename, TO_CHAR(hiredate, 'yy') AS "Day" FROM Emp;
 SELECT ename, TO_CHAR(hiredate, 'D') AS "Day" FROM Emp;
 ------------------------------------------------------------------------------------------------------
 
+select * from emp order by sal asc;
+
+select * from emp order by sal desc;
+
+SQL AGGREGATE FUNCTION
+---------------------------------------------------------------------
+Aggregate Functions :-(apply only for column)
+
+1) select sum(sal),avg(sal),max(sal),min(sal),count(sal) from emp;
+
+create table student6(rollno number,name varchar2(15),day number,per number(5,2));
+
+insert into student6(rollno,name,day) values(1,'david',1) ;
+
+select * from student6;
+
+update student6 set per=25/25 *100;
+--------------------------------------------------------------------------------------
+
+2)select vsize(empno),vsize(ename) from emp; (memory occupied by column value)
+
+3)select comm,nvl(comm,0) from emp; 
+ //null in oracle is not zero.the value is yet to be defined..
+
+4)select * from emp where to_char(hiredate,'D') in (1,2,6); 
+(employee who have joined either on sunday,monday,friday)
+-------------------------------------------------------------
+The GROUP BY statement is often used with aggregate functions (COUNT, MAX, MIN, SUM, AVG) .
+
+SELECT COUNT(empno),name
+FROM emp2
+GROUP BY name;
+
+//create table employeex(empno number,name varchar2(30),deptno number,salary number);
+insert into employeex values(101,'sunil',10,7500);
+insert into employeex values(105,'anil',20,6500);
+select * from employeex
+-------------------------------------------------------------------------------
+SELECT COUNT(empno),deptno FROM employeex GROUP BY deptno;
+SELECT sum(salary),deptno FROM employeex GROUP BY deptno;
+SELECT avg(salary),deptno FROM employeex GROUP BY deptno;
+SELECT max(salary),deptno FROM employeex GROUP BY deptno;
+SELECT min(salary),deptno FROM employeex GROUP BY deptno;
+select job,sum(salary) from emp group by job order by sum(salary);
+----------------------------------------------------------------------------------
+The SQL HAVING Clause
+The HAVING clause was added to SQL because the WHERE keyword could not be used with aggregate functions.
+
+select deptno from employeex group by deptno having min(salary) >= 2500;
+--------------------------------------------------------------------------------------------------------------------------------------
 
 
