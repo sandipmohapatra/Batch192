@@ -2890,7 +2890,202 @@ fis.close();fos.close();
 System.out.println("file copied.....");
  }}
 --------------------------------------
+example-4
+------------------
+//copy data from one file to file
+import java.io.*;
+class b
+{   //copy file to file
+     public static void main(String args[]) throws Exception
+      {
+FileInputStream fis=new FileInputStream("First.txt");//open in read mode
+FileOutputStream fos=new FileOutputStream("demo1.doc");//open in write mode
+BufferedInputStream bis=new BufferedInputStream(fis);
+BufferedOutputStream bos=new BufferedOutputStream(fos);
+int ch;
+while((ch=bis.read())!=-1)
+{
+bos.write(ch);
+}
+bos.close();fis.close();fos.close();
+System.out.println("file copied....."); }}
+------------------------------------------------------------------------
+Core Java  
+-------------------------------------------------------------------------------------------
 
+1)to which package wait(),notify(),notifyAll() belongs to -
+
+ans:- java.lang.Object
+-------------------------------------------------------------------------------
+2)public class test1 
+{
+public static void main(String[] args) {
+int b=Integer.parseInt("123a");
+System.out.println("the value is "+b);
+}
+}
+
+ans:- NumberFormatException
+-----------------------------------------------------------------------------------
+3)
+
+public class foo 
+{
+int a=10;
+public static void main(String[] args) {
+System.out.println("the value is "+a);
+}
+}
+
+ans:- compilation error
+--------------------------------------------------------------------------------
+4)no duplicate entry is allowed.
+ans :- set
+-----------------------------------------------------------------------
+5)sorted order  :- TreeMap
+------------------------------------------------------------------------
+6)user defined Exception :- throw
+-----------------------------------------------------------------------------
+7)arbitry thread move from wait pool to lock pool 
+
+ans :-notify
+-----------------------------------------------------------------------------------
+8)read(),close() will throw ans :-ans:- IOException
+------------------------------------------------------------------------------------
+9)create new file method throw which exception :-
+ans :- IOException
+--------------------------------------------------------------------------------
+10)primative data enter in file :- DataInputStream
+-----------------------------------------------------------------------------------
+11)
+int total=0;
+for(int i=0, j=10;total > 30;++i,--j)
+{
+total+=i+j;
+System.out.println(i+"   "+j);
+}
+System.out.println(total);
+}
+
+ans:- 0
+-------------------------------------------------------------------------------------
+12)transient  :- 
+
+int empno;
+String name,address;
+transient int phoneno;
+
+when you convert to object the by using serialization phone no will ans :- not be serialized.
+-----------------------------------------------------------------------------------
+13)runnable interface 
+
+public class abc implements runnable
+{
+public void run()
+{}
+}
+------------------------------------------------------------------
+14)interface can be nested
+----------------------------------------------------------------------------------
+15)int a[5] ;
+system.in.read(a[1])
+
+ans:- Compilation error
+-------------------------------------------------------------------------------------
+16)to execute thread one by one we use:-
+ans :- synchronized.
+------------------------------------------------------------------------------
+17)function to copy an array :- ans :- System.arraycopy
+----------------------------------------------------------------------------------------
+18)stack operation :-ans push and pop
+--------------------------------------------------------------------------------
+19)which collection is used to shrink the data :- 
+ans :- Java.Util.ArrayList
+------------------------------------------------------------------------------
+20)StringBuffer and StringBuilder 
+
+ans :-1)String Builder is not synchronized  and faster than StringBuffer.
+-------------------------------------------------------------------
+21)exception with FileDataWriting 
+ans :-FileNotFoundException
+
+----------------------------------------------------------
+22) 
+public class Test implements runnable
+{
+public void run()
+{
+System.out.println("Mphasis call run()");
+}
+public static void main(String args[])
+{
+new Thread(new Test()).start();
+}}
+
+ans:-Mphasis call run()
+
+--------------------------------------------------------
+23)
+HashSet ar=new HashSet();
+System.out.println(ar.add("abce"));
+System.out.println(ar.add("abcf"));
+System.out.println(ar.add("abcg"));
+System.out.println(ar.add("abce"));
+
+ans:- 
+true
+true
+true
+false
+------------------------------------
+24)
+setLoc= new HashSet();
+ setLoc.put("a",Integer(1));
+ setLoc.put("b",Integer(2));
+ setLoc.put("c",Integer(3));
+System.out.println(b);
+
+ans:- complile time error
+-----------------------------------------------
+25) interface methods can be declare as final,public and static
+--------------------------------------------------------------------------
+26)a class can implements more than one interface
+-----------------------------------------------------------------------------
+27)comparator is present int java.util   package
+-------------------------------------------------------------------
+28)
+public class Test implements runnable
+{
+public void run()
+{
+sop("foo");
+}
+public void run(String s)
+{
+sop("bar");
+}}
+ public static void main(String args())
+{
+Thread ob=new Thread(new Test())
+ob.start();
+}
+------------------
+ans:-foo
+----------------------------------------------------------------------------------
+29)what does replace do ?
+It will replace all the occurace by invoking the string with another character 
+-----------------------------------------------------------------------------------------
+30)
+FileInputStream fin;
+int c=0;
+while(c=fin.eof()!= -1)
+{
+fin=new FileInputStream(args[0]);
+((char)c));
+}
+
+ans:- TypeCast Error
+--------------------------------------------------------------------------------------------
 
 
 
