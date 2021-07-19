@@ -351,6 +351,24 @@ update student6 set per=25/25 *100;
 4)select * from emp where to_char(hiredate,'D') in (1,2,6); 
 (employee who have joined either on sunday,monday,friday)
 -------------------------------------------------------------
+update mp192stud set dept=10 where empno in(101,102,103);
+
+insert into mp192stud values(104,'akash',8877665544,19000,20);
+insert into mp192stud values(105,'ankesh',8876665544,20000,20);
+insert into mp192stud values(106,'deepak',8877655544,19000,20);
+
+SELECT COUNT(empno),dept FROM mp192stud GROUP BY dept;
+
+SELECT sum(salary),dept FROM mp192stud GROUP BY dept;
+
+SELECT avg(salary),dept FROM mp192stud GROUP BY dept;
+
+SELECT round(avg(salary),2),dept FROM mp192stud GROUP BY dept;
+
+SELECT max(salary),dept FROM mp192stud GROUP BY dept;
+
+SELECT min(salary),dept FROM mp192stud GROUP BY dept;
+
 The GROUP BY statement is often used with aggregate functions (COUNT, MAX, MIN, SUM, AVG) .
 
 SELECT COUNT(empno),name
