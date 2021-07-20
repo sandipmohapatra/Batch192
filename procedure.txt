@@ -79,4 +79,17 @@ BEGIN
 END; 
 /
 --------------------------------------------------------------------
-
+RunTime entry
+---------------------------------
+DECLARE 
+   a number; 
+PROCEDURE squareNum(x IN OUT number) IS 
+BEGIN 
+  x := x * x; 
+END;
+BEGIN 
+   a:= :a; 
+   squareNum(a); 
+   dbms_output.put_line(' Square of : ' || a); 
+END; 
+/
