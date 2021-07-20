@@ -410,5 +410,32 @@ select deptno from employeex group by deptno having min(salary) >= 2500;
 
 select count(empno),salary from mp192stud group by salary;
 --------------------------------------------------------------------------------------------------------------------------------------
+creating a clone table 
+-----------------------------------
+select * from mp192stud;
+insert into mp192stud values(107,'koya',8899776612,35000,20,1500);
+create table mp192student1 as select * from mp192stud;
+select * from mp192student1;
+select * from mp192stud minus select * from mp192student1; 
+------------------------------------------------------------------------------------------------------
+select * from mp192stud intersect select * from mp192student1;
+--------------------------------------------------------------------------------------------------
+select * from mp192stud union select * from mp192student1;
+select * from mp192stud union all select * from mp192student1;
+------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
