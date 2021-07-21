@@ -1,0 +1,27 @@
+Sequence :- a sequence is a user created database object that can be shared by multiple users to generate unique integers.
+
+a typical usage for sequences is to create a primary key value,which must be unique for each row.
+
+example:-
+create sequence xyz increment by 1 start with 1 maxvalue 999 nocache nocycle;
+
+insert into class(rollno,name,section) values(xyz.nextval,'amit','a');
+
+select xyz.nextval from dual;
+
+select xyz.currval from dual;
+ --------------------------------------------------------------------
+example-1
+
+create sequence seq11 increment by 1 start with 1 maxvalue 999;
+
+create table mp192student3 (empno number,name varchar2(30),address varchar2(30));
+
+insert into mp192student3 values(seq11.nextval,'sandip','hyderabad');
+insert into mp192student3 values(seq11.nextval,'akash','hyderabad');
+
+select * from mp192student3;
+
+select seq11.currval from dual;
+---------------------------------------------------------------------
+ 
