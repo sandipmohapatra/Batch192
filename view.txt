@@ -1,0 +1,82 @@
+ view:- 
+A view is a logical table based on a table or another view.
+a view contains no data of it's own .
+the table on which the view is based is known as base table.
+
+advantage :-
+1)views restrict access to data because the view can display selective columns from the table.
+2)views can be used to make simple queries to retrieve the results of complicated queries.
+3)one view can be used to retrieve data from several tables.
+
+simple view:-
+1)Derives data from only one table.
+2)contains no functions or groupby data.
+3)can perform DML(data manupulation language insert,update,delete) operation
+
+complex view:-
+1)derives data from many table.
+2)contains functions or group by data.
+3)doesnot always allow DML operations.
+
+example:-
+
+1)create view xyz as select empno,ename from emp where deptno=10;
+
+select * from xyz;
+
+----------------------------------------------------------
+create view join2 as select a.empno,a.name,a.address,a.salary,a.panno,a.dept,a.age,b.phythonno,b.dbmsno from hystud a,hymarks b where a.empno=b.empno;
+
+select * from join2;
+------------------------------------------------------------------
+
+
+example:-
+select * from mp192student1;
+
+select empno,name,phoneno,salary,dept from mp192student1;
+
+create view vname as select empno,name,phoneno,salary,dept from mp192student1; 
+
+select * from vname;
+
+insert into vname values(107,'koya',9900887766,45000,10);
+
+select * from vname;--it stores sql querry.you delete the table the view will be automatically deleted
+
+select empno,name from vname;
+
+create view vname1 as select empno,name from vname;
+
+select * from vname1; --we can create a view on a view.
+---------------------------------------------------------------------------------------
+desc mp192student1;
+
+create table mp192student2(empno number,address varchar2(30),design varchar2(30));
+
+insert into mp192student2 values(101,'bangalore','manager');
+insert into mp192student2 values(102,'bangalore','officer');
+insert into mp192student2 values(103,'bangalore','developer');
+
+select * from mp192student2;
+select * from mp192student1;
+-----------------------------------------------------------------------------------
+select a.empno,a.name,a.phoneno,a.salary,a.dept,b.address,b.design from mp192student1 a , mp192student2 b where a.empno=b.empno;
+
+--empno is common in both the tables.there is a matching from both the tables.and selected or matched rows are displayed.
+
+--a is alias name for mp192student1;
+--b is alias name for mp192student2;
+
+create view jview as select a.empno,a.name,a.phoneno,a.salary,a.dept,b.address,b.design from mp192student1 a , mp192student2 b where a.empno=b.empno;
+
+select * from jview;
+
+
+view stores only query.we can apply DML operation on simple view.
+
+2 types of view.
+1)simple view (it is on single table)----DML operation.
+2)complex view(join on 2 or more table)
+
+---------------------------------------------------------------
