@@ -23,7 +23,19 @@ END;
 insert into IBMEMP values(1009,'Vikram','ProjtLead');
 
 ------------------------------------------------------------
+drop trigger trig1;
 
+CREATE OR REPLACE TRIGGER trig1
+BEFORE INSERT ON mp192stud 
+BEGIN
+IF(TO_CHAR(SYSDATE,'DY')IN('SAT','SUN')) OR 
+(TO_CHAR(SYSDATE,'HH12:MI') NOT BETWEEN '08am' AND '6pm')
+THEN RAISE_APPLICATION_ERROR(-20500,'You may insert into employees table only during business hours');
+END IF;
+END;
+
+select * from mp192stud;
+insert into mp192stud values(110,'sumeet',9980000222,75000,20,1000);
 
  
 
