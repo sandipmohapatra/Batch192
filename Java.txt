@@ -3015,14 +3015,14 @@ public class Test implements runnable
 {
 public void run()
 {
-System.out.println("Mphasis call run()");
+System.out.println("wipro call run()");
 }
 public static void main(String args[])
 {
 new Thread(new Test()).start();
 }}
 
-ans:-Mphasis call run()
+ans:-wipro call run()
 
 --------------------------------------------------------
 23)
