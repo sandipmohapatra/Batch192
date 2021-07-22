@@ -1,0 +1,70 @@
+Handling Exceptions
+---------------------------------------------------------------------------------------------------
+1. NO_DATA_FOUND
+2. TOO_MANY_ROWS
+3. ZERO_DIVIDE
+4. DUP_VAL_ON_INDEX
+
+-----------------------------------------------------------------------------------------------
+
+1. Zero Divide Error
+
+DECLARE
+n number;
+BEGIN
+n:=10/0;
+dbms_output.put_line(n);
+EXCEPTION
+WHEN ZERO_DIVIDE THEN
+dbms_output.put_line('Zero Divide Error');
+END;
+-----------------------------------------------------------------------------------------------------
+
+
+
+
+2. NO_DATA_FOUND
+DECLARE
+eno number:=1030;
+ename varchar(30);
+BEGIN
+select empname into ename from mphasisemp where empid=eno;
+dbms_output.put_line('Empname = ' || ename);
+EXCEPTION
+WHEN NO_DATA_FOUND THEN
+dbms_output.put_line('Employee does not exist');
+END;
+
+
+---------------------------------------------------------------------------------
+
+
+
+3. DUP_VAL_ON_INDEX
+
+BEGIN
+insert into mphasisemp(empid,empname,jobtitle)values(1002,'anil','Techsupport');
+dbms_output.put_line('1 row created');
+EXCEPTION
+WHEN DUP_VAL_ON_INDEX THEN
+dbms_output.put_line('Primary key attribute does not contain duplicate values');
+END;
+--------------------------------------------------
+4.TOO_MANY_ROWS
+----------------------------------------------------
+
+DECLARE
+         v_lname VARCHAR2 (15);
+        BEGIN
+         SELECT last_name INTO v_lname FROM employee185
+         WHERE first_name = 'john';
+          DBMS_OUTPUT.PUT_LINE ('Last name is :' || v_lname);
+        EXCEPTION
+          WHEN TOO_MANY_ROWS THEN
+          DBMS_OUTPUT.PUT_LINE (' Your SELECT statement retrieved multiple
+          rows. Consider using a cursor.');
+        END;
+
+create table employee185(first_name varchar2(30),last_name varchar2(30));
+
+insert into employee185 values('john','Hr');
