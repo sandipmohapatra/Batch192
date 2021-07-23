@@ -3201,6 +3201,25 @@ catch(ClassNotFoundException c)
     }
 }
 -----------------------------------------------------
+example-1 JDBC
+
+import java.sql.*;
+import java.util.*;
+public class Firstjdbc 
+{
+public static void main(String[] args) throws Exception
+{
+	Scanner ob=new Scanner(System.in);
+	Class.forName("oracle.jdbc.driver.OracleDriver");//loading of driver class
+	Connection con=DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe","system","1234");
+	Statement st=con.createStatement();
+	ResultSet rs=st.executeQuery("select * from mp192stud");//ResultSet stores the whole table 
+	while(rs.next())  //the pointer goes to the next record
+	{
+	System.out.println(rs.getInt(1)+"      "+rs.getString(2)+"      \t\t"+rs.getString(3));	//1,2,3  are column nos
+	}
+	}}
+------------------------------------------------------------------------------------------------------
 
 
 
