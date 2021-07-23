@@ -3105,7 +3105,102 @@ System.out.println("enter the emp name"+name);
 System.out.println("enter the emp sal"+sal);
  }}
 ---------------------------------------------------------------------
+Example 2:-
+---------------------------
+import java.io.*;
+class f
+{   
+public static void main(String args[]) throws Exception
+{
+FileReader fr=new FileReader("First.txt");//read data in character format
+BufferedReader br=new BufferedReader(fr);
+String name;
+while((name=br.readLine())!=null)//null is EOF in character stream
+{
+System.out.print(name);
+}
+fr.close();
+br.close();
+System.out.println("file copied.....");
+}}
+------------------------------------------
+example-3
+---------------------
+Serialization :- Serialization is the process of writing the data of an object to a file.
+we can do serialization by implementing Serializable inteface.It is a marker interface.(no abstract methods in it)
+transient  :- if we declare the variable as transient it will not be serializable.
 
+-------------------------------------------------
+example-7
+----------------
+import java.io.*;
+public class employee implements Serializable
+{
+   public String name;
+   public String address;
+   public transient int SSN;
+   public int number;
+  
+}
+---------------------------------------------------
+import java.io.*;
+public class SerializeDemo
+{
+   public static void main(String [] args)
+   {
+      employee e = new employee();
+      e.name = "sandip";
+      e.address = "jaynagar, 4th Block";
+      e.SSN = 11123;
+      e.number = 101;
+      try
+      {
+         FileOutputStream fileOut =new FileOutputStream("abc.txt");//file will be created and open in write mode.
+         ObjectOutputStream out = new ObjectOutputStream(fileOut);//write the object into the file
+         out.writeObject(e);
+         out.close();
+         fileOut.close();
+         System.out.printf("Serialized data is saved in abc.txt");
+      }catch(IOException i)
+      {
+          i.printStackTrace();
+      }
+   }
+}
+-------------------------------------------------------------------
+import java.io.*;
+public class DeserializeDemo
+{
+   public static void main(String [] args)
+   {
+      employee e = null;
+      try
+      {
+         FileInputStream fileIn = new FileInputStream("abc.txt");
+         ObjectInputStream in = new ObjectInputStream(fileIn);
+         e = (employee) in.readObject();
+         in.close();
+         fileIn.close();
+      }	
+catch(IOException i)
+      {         
+
+i.printStackTrace();
+System.out.println(i);
+               }
+catch(ClassNotFoundException c)
+      {
+         System.out.println("Employee class not found");
+         c.printStackTrace();
+             } 
+      System.out.println("Deserialized Employee...");
+      System.out.println("Name: " + e.name);
+      System.out.println("Address: " + e.address);
+      System.out.println("sssn no: " + e.SSN);
+      System.out.println("Number: " + e.number);
+    }
+}
+-----------------------------------------------------
 
 
 
