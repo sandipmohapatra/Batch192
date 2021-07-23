@@ -3341,6 +3341,8 @@ DatabaseMetaData md=con.getMetaData();
 System.out.println(md.getDriverVersion());
 System.out.println(md.getDriverName());
 ----------------------------------------------------------------------
+example 5:
+----------------------
 import java.sql.*;  
 class Firstjdbc{  
 public static void main(String args[]){  
@@ -3359,6 +3361,40 @@ con.close();
 }  
 }  
 ---------------------------------------------------------------------------
+Example 6:-
+-------------------
+import java.sql.*;
+ public class Firstjdbc {
+     public static void main(String a[])throws Exception
+    {
+        Connection con = null;
+        PreparedStatement pst = null;
+         Class.forName("oracle.jdbc.driver.OracleDriver");
+            con = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe","system","1234");
+            con.setAutoCommit(false);
+            pst = con.prepareStatement("update mp192stud set salary=? where empno=?");
+            pst.setInt(1, 30000);
+            pst.setInt(2, 101);
+            pst.addBatch();
+            pst.setInt(1, 40000);
+            pst.setInt(2, 102);
+            pst.addBatch();
+            int count[] = pst.executeBatch();//returns an array of update counts. 
+            for(int i=1;i<count.length;i++){
+                System.out.println("Query "+i+" has effected "+count[i]+" times");
+            }
+            con.commit();
+        }
+    }
+----------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
 
 
 
