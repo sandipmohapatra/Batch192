@@ -1,0 +1,49 @@
+<html>
+<h1><center>Employee Registration Page</center></h1><hr><hr>
+<form action="Second">
+<table>
+<tr><td>Enter empno<td><input type=text name=t1 size=20 required></tr>
+<tr><td>Enter name<td><input type=text name=t2 size=20 required></tr>
+<tr><td>Enter phoneno<td><input type=text name=t3 size=20 required></tr>
+<tr><td>Enter salary<td><input type=text name=t4 size=20 required></tr>
+<tr><td>Enter dept<td><input type=text name=t5 size=20 required></tr>
+<tr><td>Enter comm<td><input type=text name=t6 size=20 required></tr>
+<tr><td><td><input type=submit value=submit></tr>
+</table>
+</form>
+</html>
+-----------------------------------------
+import java.io.*;
+import javax.servlet.*;
+import javax.servlet.annotation.WebServlet;
+@WebServlet("/Second")
+public class Second extends GenericServlet 
+{
+	@Override
+	public void service(ServletRequest req, ServletResponse res) throws ServletException, IOException 
+	{
+PrintWriter pw=res.getWriter();
+res.setContentType("text/html");
+String a=req.getParameter("t1");
+String b=req.getParameter("t2");
+String c=req.getParameter("t3");
+String d=req.getParameter("t4");
+String e=req.getParameter("t5");
+String f=req.getParameter("t6");
+pw.println("<h1>The Registered data is </h1>");
+pw.println("The empno is "+a);
+pw.println("<br>");
+pw.println("The name is "+b);
+pw.println("<br>");
+pw.println("The phone no is "+c);
+pw.println("<br>");
+pw.println("The salary is "+d);
+pw.println("<br>");
+pw.println("The dept is "+e);
+pw.println("<br>");
+pw.println("The comm is "+f);
+
+	}
+	
+}
+-----------------------------------------------------------------
