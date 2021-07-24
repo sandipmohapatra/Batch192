@@ -2912,6 +2912,27 @@ System.out.println("file copied....."); }}
 ------------------------------------------------------------------------
 Core Java  
 -------------------------------------------------------------------------------------------
+The process of building new classes from existing one is called ______. 
+ans)Inheritance
+Which method of the Class.class is used to determine the name of a class represented by the class object as a String?
+ans)getName()
+Mechanism of deriving a class from another derived class is known as____ 
+ans)Multilevel Inheritance 
+RunTime Polymorphism is achieved by ______ 
+ans)function Overriding 
+A property which is not true for classes is that they 
+ans)bring together all aspects of an entity in one place. 
+The process of building new classes from existing one is called 
+ans)Inheritance.
+Data members which are static
+ans)can only be used in static functions 
+Exception handling is targeted at 
+ans)Run-time error 
+Which of the following is NOT a key component of object oriented programming?
+ans)Parallelism
+Which of these is TRUE of the relationship between objects and classes?
+ans)An object is an instance of a class.
+-----------------------------------------------------------------------------------------------------------------------------------
 
 1)to which package wait(),notify(),notifyAll() belongs to -
 
