@@ -47,3 +47,57 @@ pw.println("The comm is "+f);
 	
 }
 -----------------------------------------------------------------
+import java.io.*;
+import java.sql.*;
+import javax.servlet.*;
+import javax.servlet.annotation.WebServlet;
+@WebServlet("/Second")
+public class Second extends GenericServlet 
+{
+	@Override
+	public void service(ServletRequest req, ServletResponse res) throws ServletException, IOException 
+	{
+PrintWriter pw=res.getWriter();
+res.setContentType("text/html");
+String a=req.getParameter("t1");
+String b=req.getParameter("t2");
+String c=req.getParameter("t3");
+String d=req.getParameter("t4");
+String e=req.getParameter("t5");
+String f=req.getParameter("t6");
+pw.println("<h1>The Registered data is </h1>");
+pw.println("The empno is "+a);
+pw.println("<br>");
+pw.println("The name is "+b);
+pw.println("<br>");
+pw.println("The phone no is "+c);
+pw.println("<br>");
+pw.println("The salary is "+d);
+pw.println("<br>");
+pw.println("The dept is "+e);
+pw.println("<br>");
+pw.println("The comm is "+f);
+try
+{
+    Class.forName("oracle.jdbc.driver.OracleDriver");
+    Connection con = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe","system","1234");
+    PreparedStatement st=con.prepareStatement("insert into mp192stud values(?,?,?,?,?,?)");
+    int p=Integer.parseInt(a);
+    st.setInt(1, p);
+    st.setString(2, b);
+    long q=Long.parseLong(c);
+    st.setLong(3, q);
+    float r=Float.parseFloat(d);
+    st.setFloat(4,r);
+    int s=Integer.parseInt(e);
+    st.setInt(5, s);
+    int t=Integer.parseInt(f);
+    st.setInt(6, t);
+    st.execute();
+    pw.println("row inserted");
+}
+catch(Exception ae)
+{
+	ae.printStackTrace();
+}}}
+------------------------------------------------------------------------------------
