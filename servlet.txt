@@ -101,3 +101,150 @@ catch(Exception ae)
 	ae.printStackTrace();
 }}}
 ------------------------------------------------------------------------------------
+example-3
+--------------------
+<html>
+<h1><center>Employee Registration Page</center></h1><hr><hr>
+<form action="Second">
+<table>
+<tr><td>Enter empno<td><input type=text name=t1 size=20 ></tr>
+<tr><td>Enter name<td><input type=text name=t2 size=20 ></tr>
+<tr><td>Enter phoneno<td><input type=text name=t3 size=20></tr>
+<tr><td>Enter salary<td><input type=text name=t4 size=20 ></tr>
+<tr><td>Enter dept<td><input type=text name=t5 size=20></tr>
+<tr><td>Enter comm<td><input type=text name=t6 size=20></tr>
+<tr><td><td><input type=submit value=Insert name="button">
+					<input type=submit value=Update name="button">
+					<input type=submit value=Delete name="button">
+					<input type=submit value=Select name="button"></tr>
+</table>
+</form>
+</html>
+--------------------------------------------------
+import java.io.*;
+import java.sql.*;
+import javax.servlet.*;
+import javax.servlet.annotation.WebServlet;
+@WebServlet("/Second")
+public class Second extends GenericServlet 
+{
+	@Override
+	public void service(ServletRequest req, ServletResponse res) throws ServletException, IOException 
+	{
+PrintWriter pw=res.getWriter();
+res.setContentType("text/html");
+String a=req.getParameter("t1");
+String b=req.getParameter("t2");
+String c=req.getParameter("t3");
+String d=req.getParameter("t4");
+String e=req.getParameter("t5");
+String f=req.getParameter("t6");
+String g=req.getParameter("button");
+Connection con=null;
+try {
+	Class.forName("oracle.jdbc.driver.OracleDriver");
+	 con = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe","system","1234");
+} catch (Exception e1) {
+		e1.printStackTrace();
+}
+if(g.equals("Insert"))
+{
+try
+{
+    PreparedStatement st=con.prepareStatement("insert into mp192stud values(?,?,?,?,?,?)");
+    int p=Integer.parseInt(a);
+    st.setInt(1, p);
+    st.setString(2, b);
+    long q=Long.parseLong(c);
+    st.setLong(3, q);
+    float r=Float.parseFloat(d);
+    st.setFloat(4,r);
+    int s=Integer.parseInt(e);
+    st.setInt(5, s);
+    int t=Integer.parseInt(f);
+    st.setInt(6, t);
+    st.execute();
+    pw.println("row inserted");
+}
+catch(Exception ae)
+{
+	ae.printStackTrace();
+}
+}
+
+else if(g.equals("Update"))
+{
+try
+{
+    PreparedStatement st=con.prepareStatement("update mp192stud set name=?,phoneno=?,salary=?,dept=?,comm=? where empno=?");
+    int p=Integer.parseInt(a);
+    st.setInt(6, p);
+    st.setString(1, b);
+    long q=Long.parseLong(c);
+    st.setLong(2, q);
+    float r=Float.parseFloat(d);
+    st.setFloat(3,r);
+    int s=Integer.parseInt(e);
+    st.setInt(4, s);
+    int t=Integer.parseInt(f);
+    st.setInt(5, t);
+    st.execute();
+    pw.println("row updated");
+}
+catch(Exception ae)
+{
+	ae.printStackTrace();
+}
+}
+
+else if(g.equals("Delete"))
+{
+try
+{
+    PreparedStatement st=con.prepareStatement("delete from  mp192stud where empno=?");
+    int p=Integer.parseInt(a);
+    st.setInt(1, p);
+    st.execute();
+    pw.println("row deleted");
+}
+catch(Exception ae)
+{
+	ae.printStackTrace();
+}
+}
+else if(g.equals("Select"))
+{
+try
+{
+    PreparedStatement st=con.prepareStatement("select * from mp192stud");
+    pw.println("<h3><center>Employee Registration Report</h3><hr>");
+   	pw.println("<table border=2>");
+    pw.println("<tr>");
+   	 pw.println("<th>EMPNO</th><th>NAME</th><th>PHONE NO</th><th>SALARY</th><th>DEPT NO</th><th>COMMITION</th>");
+   	 pw.println("</tr>");
+    ResultSet rs=st.executeQuery();
+    while(rs.next())
+    {
+    	pw.println("<tr><td>");
+    	pw.println(rs.getString(1));
+    	pw.println("<td>");
+    	pw.println(rs.getString(2));
+    	pw.println("<td>");
+    	pw.println(rs.getString(3));
+    	pw.println("<td>");
+    	pw.println(rs.getString(4));
+    	pw.println("<td>");
+    	pw.println(rs.getString(5));
+    	pw.println("<td>");
+    	pw.println(rs.getString(6));
+    	pw.println("</tr>");
+    }
+}
+catch(Exception ae)
+{
+	ae.printStackTrace();
+}
+}
+
+}}
+--------------------------------------
