@@ -586,4 +586,60 @@ catch(Exception ae)
 }
 
 --------------------------------------------------------------
-				
+success.html
+----------------------
+<a href=Third><h1>Click Here To See The Report</h1></a>
+-------------------------------------------
+Third.java
+------------------------
+import java.io.*;
+import java.sql.*;
+import javax.servlet.*;
+import javax.servlet.http.*;
+import javax.servlet.annotation.WebServlet;
+@WebServlet("/Third")
+public class Third extends HttpServlet 
+{
+	
+	@Override
+	public void doGet(HttpServletRequest req, HttpServletResponse res)
+			throws ServletException, IOException 
+	{
+PrintWriter pw=res.getWriter();
+res.setContentType("text/html");
+Connection con=null;
+try {
+	Class.forName("oracle.jdbc.driver.OracleDriver");
+	 con = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe","system","1234");
+	 PreparedStatement st=con.prepareStatement("select * from mp192reg");
+	    pw.println("<h3><center>Employee Registration Report</h3><hr>");
+	   	pw.println("<table border=2>");
+	    pw.println("<tr>");
+	   	 pw.println("<th>EMPNO</th><th>NAME</th><th>PHONE NO</th><th>SALARY</th><th>DEPT NO</th><th>PASSWORD</th>");
+	   	 pw.println("</tr>");
+	    ResultSet rs=st.executeQuery();
+	    while(rs.next())
+	    {
+	    	pw.println("<tr><td>");
+	    	pw.println(rs.getString(1));
+	    	pw.println("<td>");
+	    	pw.println(rs.getString(2));
+	    	pw.println("<td>");
+	    	pw.println(rs.getString(3));
+	    	pw.println("<td>");
+	    	pw.println(rs.getString(4));
+	    	pw.println("<td>");
+	    	pw.println(rs.getString(5));
+	    	pw.println("<td>");
+	    	pw.println(rs.getString(6));
+	    	pw.println("</tr>");
+}}
+catch(Exception ae)
+{
+	ae.printStackTrace();
+}
+	}
+}
+
+---------------------------------------------------------------------------------------------
+	
