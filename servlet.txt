@@ -419,3 +419,42 @@ Uses:-
 1)to keep the track of no of concurrent clients using a web application.
 2)database need to be loaded on startup and saved while shut down.
 ---------------------------------------------------------------------------------------------
+Example-1
+---------------------
+<html>
+<h1><center>Employee Login Page</center></h1><hr><hr>
+<form action="Second" method=get>
+<table>
+<tr><td>Enter Username<td><input type=text name=t1 size=20 ></tr>
+<tr><td>Enter password<td><input type=password name=t2 size=20 ></tr>
+<tr><td><td><input type=submit value=Login></td></tr>
+</table>
+</form>
+</html>
+-------------------------------------------
+import java.io.*;
+import java.sql.*;
+import javax.servlet.*;
+import javax.servlet.http.*;
+import javax.servlet.annotation.WebServlet;
+@WebServlet("/Second")
+public class Second extends HttpServlet
+{
+	
+	@Override
+	public void doGet(HttpServletRequest req, HttpServletResponse res) 
+			throws ServletException, IOException 
+	{
+PrintWriter pw=res.getWriter();
+res.setContentType("text/html");
+String a=req.getParameter("t1");
+String b=req.getParameter("t2");
+if(a.equals("Mphasis") && b.equals("Mphasis"))
+{
+	res.sendRedirect("Success.html");
+}
+else
+	res.sendRedirect("Failure.html");
+}
+}
+-------------------------------------------------------------------------
