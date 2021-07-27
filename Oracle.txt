@@ -423,6 +423,98 @@ select * from mp192stud intersect select * from mp192student1;
 select * from mp192stud union select * from mp192student1;
 select * from mp192stud union all select * from mp192student1;
 ------------------------------------------------------------------
+1)what is a entity?
+table
+2)what is attribute?
+column
+3)what is tuple?
+row
+4)what type of data is in DBMS?
+structured,relational
+5)privlages of view can be in own schema?
+true
+6)privlages of synonym can be in own schema?
+false
+7)what are DML OPERATIONS?
+insert,delete,update
+8)What is normalization use?
+1)reduce redundency
+2)reduce disk size
+9)NVL is used for ?null value to any default value or zero.
+10)% is used for ---------- and -------------?like and not like
+11)which type of normalization is used for removing transient dependency?
+3NF
+12)where is having clause used?
+in group by  queries
+13)where is where clause used?
+select only rows
+14)object oriented programming doesnot follow M:M relationship.(TRUE)
+15)DBMS-RBBMS follow how many codd rules?6 rules.
+ 16)which of the following is not a DDL command
+
+a)Truncate
+b)Alter
+c)create
+d)update
+
+ans)update
+----------------------------------
+17)which of the statement is used to delete all rows in a table.
+a)delete
+b)remove
+c)drop
+d)truncate
+
+a)truncate
+
+18)views are also known as --- virtual tables
+
+19)how many primary key can have in a table -----only 1
+
+20)which of the following is not a valid aggregate function
+a)count
+b)compute
+c)sum
+d)max
+
+ans)compute
+
+21)which operator is used to compare a value to a specified list of values?
+a)any
+b)between
+c)all
+d)IN
+
+ans)IN
+
+22)which operator test column for absence of data
+a)not operator
+b)exists operator
+c)is null operator
+d)none
+
+ans)is null operator
+
+23)------------- clause creates temporary relation for the query on which it is defined.
+a)with
+b)from
+c)where
+d)select
+
+ans)with
+---------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
