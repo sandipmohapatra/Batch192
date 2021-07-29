@@ -1,0 +1,232 @@
+1)Which of the following is not a component/class of JDBC API?	
+DriverManager	
+Driver	
+Connection	
+Transaction			
+choice 4
+ 
+2)In which of the following type of ResultSet, the cursor can only move forward in the result set?	
+ResultSet.TYPE_FORWARD_ONLY	
+ResultSet.TYPE_SCROLL_INSENSITIVE	ResultSet.TYPE_SCROLL_SENSITIVE	
+None of the above.			
+choice 1
+
+3)Which of the following type of JDBC driver, is also called Type 4 JDBC driver?	
+JDBC-ODBC Bridge plus ODBC driver	
+Native-API, partly Java driver	
+JDBC-Net, pure Java driver	
+Native-protocol, pure Java driver			
+choice 4
+
+4)Which of the following is used to call stored procedures on the database?	
+Statement	
+PreparedStatement	
+CallableStatement	
+None of the above			
+choice 3
+
+5)Which of the following consists of methods for contacting a database?	
+DriverManager	
+JDBC driver	
+Connection	
+Statement			
+choice 3
+
+6)Which of the following is a Metadata interfaces of JDBC?	
+DatabaseMetaData	
+ResultSetMetaData	
+Both of the above.	
+None of the above			
+choice 3
+
+7)Which of the following is not interfaces?	
+DriverManager	
+Connection	
+Statement
+ResultSet			
+choice 1
+
+8)Database meta data are retrieved through ____________.	
+ResultSet Object	
+PreparedStatement object	
+Connection object	
+Statement object			
+choice 3
+
+9)SQL ________ statements may not change the contents of a database	
+DELETE	
+UPDATE	
+SELECT	
+INSERT			
+choice 3
+
+10)Result set meta data are retrieved through ____________	
+PreparedStatement object	
+ResultSet Object	
+Connection object	
+Statement object			
+
+choice 2
+
+11)Invoking Class.forName method may throw ___________	
+ClassNotFoundException	
+RuntimeException	
+SQLException	
+IOException			
+choice 1
+
+
+12)What information may be obtained from a ResultSetMetaData object?	
+number of columns in the result set	
+number of rows in the result set	database URL and product name	
+JDBC driver name and version			
+choice 1
+
+13)RowSet is an extension of _______	
+Statement	
+CLOB	
+ResultSet	
+Connection			
+choice 3
+
+14)You can store images in a database using data type _______	
+BLOB	
+varchar2	
+CLOB	
+varchar			
+choice 1
+
+15)In a scrollable and updateable resultset, you can use ___________ methods on a result set	
+updateRow()	
+first()	
+deleteRow()	
+insertRow()	
+all of the above 		
+choice 5
+
+16)________ is an attribute or a set of attributes that uniquely identifies the relation.	
+A key	
+A superkey	
+A primary key	
+A candidate key			
+choice 2
+
+17)What are the JDBC statements	
+Statement	
+PreparedStatement	
+CallableStatement	
+All of the above			
+choice 4
+
+18)What is JDBC Driver	
+JDBC-ODBC bridge driver	
+Native-API driver	
+Network Protocol driver	
+Thin driver	
+all of the above 		
+choice 5
+
+19)What are the steps to connect to the database in java	
+Registering the driver class	
+Creating connection	
+Creating statement	
+Executing queries	
+all of the above 		
+choice 5
+
+20)What are the JDBC API components	
+Connection	
+Statement	
+PreparedStatement	
+ResultSet	
+all of the above 		
+choice 5
+
+21)What are the classes in JDBC API	
+Blob	
+Clob	
+Types	
+all of the above 		
+choice 3
+
+22)IBM DB2,oracle sybas,informax.....
+ans :- native api 
+
+23)DDL (alter,create,drop)
+ans:- exceuteUpdate(),execute()
+
+24)which driver is not vendor specific
+ans:- type 1 and type 3
+
+25)ascii and unicode character 
+ans:- getCharacterStream() 
+
+27)which driver has 3 tier architecture
+ans :- type 3
+
+28)seven digit mantissa
+ans:- real
+
+29)isSearchable(int column) returns -----------------
+ans :- binary values
+
+30)ResultSet object can be moved in forward direction and can be updatable 
+ans :- false
+
+31)data like table,view and,procedure,function are stored in 
+ans :- DataBaseMetadata 
+ 
+32)date and time
+java.util.date
+java.sql.timestamp
+
+33)How many ResultSet avilable in JDBC
+
+ans:- 3
+
+1)ScrollInsensitive
+2)Scrollsensitive
+3)FORWARD_only
+
+34)which model do the jdbc api support fro database access.
+ans:-2 and 3 tier
+
+35)How can we get which field is primary key .
+
+ans:- database metadata object.
+
+-----------------------------------------------------------------------------------------
+1)getPrimarykey() belongs to DataBaseMetaData
+2)which type of driver is 3 tier Architecture ---Type 3
+3)which type of driver is not vendor specific-----Type 1,3
+4)
+Connection con;
+PreparedStatement ps=con.prepareStatement("create table abc(empno int)");
+ps.executeUpdate();
+ps.close();
+
+ans:- sqlException 
+
+5)
+Connection con;
+PreparedStatement ps=con.prepareStatement("select * from abc");
+ResultSet rs=ps.executeQuery();
+ps.close();
+
+ans:- error in :-ResultSet rs=ps.executeQuery();
+
+6)what happens when setAutocommit(true)  ?
+ans:- all indivisual sql statements are treated as transactions.
+and will be commited after execution.
+
+7)when the resultset cursor goto the last record
+ans:- -1
+
+8)executeUpdate(),execute(),exceuteQuery() which is suitable for DDL (create,drop,alter)
+ans:- execute(),executeUpdate()
+
+DML (insert,update,delete):-execute(),executeUpdate()   
+
+9)for out we will use RegisterOutParameter();
+
+10)we cannot have table with same column names.
