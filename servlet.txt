@@ -757,3 +757,40 @@ catch(Exception ae)
 {}
 }}
 ----------------------------------------------------	
+JSP
+-----------
+<html>
+<h1><center>Employee Registration Page</center></h1><hr><hr>
+<form action="Second.jsp" method=get>
+<table>
+<tr><td>Enter empno<td><input type=text name=t1 size=20 ></tr>
+<tr><td>Enter name<td><input type=text name=t2 size=20 ></tr>
+<tr><td>Enter phoneno<td><input type=text name=t3 size=20></tr>
+<tr><td>Enter salary<td><input type=text name=t4 size=20 ></tr>
+<tr><td>Enter dept<td><input type=text name=t5 size=20></tr>
+<tr><td>Enter Password<td><input type=password name=t6 size=20></tr>
+<tr><td><td><input type=submit value=submit></tr>
+</table>
+</form>
+</html>
+
+------------------------------------
+<h1>Employee Report</h1>
+<% String a=request.getParameter("t1");
+String b=request.getParameter("t2");
+String c=request.getParameter("t3");
+String d=request.getParameter("t4");
+String e=request.getParameter("t5");
+String f=request.getParameter("t6");%>
+<%out.println("The empno is "+a);
+out.println("<br>");
+out.println("The name is "+b);
+out.println("<br>");
+out.println("The phoneno  is "+c);
+out.println("<br>");
+out.println("The salary is "+d);
+out.println("<br>");
+out.println("The deptno is "+e);
+out.println("<br>");
+out.println("The password is "+f);%>
+--------------------------------------------------
