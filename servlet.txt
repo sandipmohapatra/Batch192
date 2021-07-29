@@ -794,3 +794,68 @@ out.println("The deptno is "+e);
 out.println("<br>");
 out.println("The password is "+f);%>
 --------------------------------------------------
+example-2
+-----------------------------
+<html>
+<h1><center>Employee Registration Page</center></h1><hr><hr>
+<form action="Second.jsp" method=get>
+<table>
+<tr><td>Enter empno<td><input type=text name=t1 size=20 ></tr>
+<tr><td>Enter name<td><input type=text name=t2 size=20 ></tr>
+<tr><td>Enter phoneno<td><input type=text name=t3 size=20></tr>
+<tr><td>Enter salary<td><input type=text name=t4 size=20 ></tr>
+<tr><td>Enter dept<td><input type=text name=t5 size=20></tr>
+<tr><td>Enter Password<td><input type=password name=t6 size=20></tr>
+<tr><td><td><input type=submit value=submit></tr>
+</table>
+</form>
+</html>
+--------------------------
+<h1>Employee Report</h1>
+<%@page import="java.sql.*" %>
+<% String a=request.getParameter("t1");
+String b=request.getParameter("t2");
+String c=request.getParameter("t3");
+String d=request.getParameter("t4");
+String e=request.getParameter("t5");
+String f=request.getParameter("t6");
+
+out.println("The empno is "+a);
+out.println("<br>");
+out.println("The name is "+b);
+out.println("<br>");
+out.println("The phoneno  is "+c);
+out.println("<br>");
+out.println("The salary is "+d);
+out.println("<br>");
+out.println("The deptno is "+e);
+out.println("<br>");
+out.println("The password is "+f);%>
+
+<%   
+try
+{
+	Class.forName("oracle.jdbc.driver.OracleDriver");
+	 Connection con = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe","system","1234");
+   PreparedStatement st=con.prepareStatement("insert into mp192reg values(?,?,?,?,?,?)");
+   int p=Integer.parseInt(a);
+   st.setInt(1, p);
+   st.setString(2, b);
+   long q=Long.parseLong(c);
+   st.setLong(3, q);
+   float r=Float.parseFloat(d);
+   st.setFloat(4,r);
+   int s=Integer.parseInt(e);
+   st.setInt(5, s);
+   st.setString(6, f);
+   st.execute();
+   out.println("row inserted");
+}
+catch(Exception ae)
+{
+	out.println("the error is "+ae);
+}
+
+%>
+-------------------------------------
+
