@@ -913,7 +913,260 @@ catch(Exception ae)
 {} }}
 
 -----------------------------------------------------------
+JSP
+-------------
+1)The code for JSP is small as compared to servlet.
+2)in jsp the html code will be separate and the JSP code will be separate.
+3)The jsp code is converted to servlet when it runs internally.
+4)in jsp we have jsp action tags and implicit objects.
+5)jsp will take more time than servlet.
+6)there are 4 scopes:- 1)request 2)session 3)response 4)Application
 
+jsp life cycle :-
+------------------------
+1)jspInit()---Initialization
+2)_jspService()--execution
+3)jspDestroy()--clean up
+in this jsp is 1)compilation 2)Initialization 3)execution 4)clean up
+
+---------------------------------------------- 
+JAVA SERVER PAGES
+----------------------------------------------
+it is classified into 
+1)directives
+2)scripting elements
+3)standard action
+4)declaration tag<%!int a=10%>
+5)expression tag <%=sum%>
+6)comment tag <!-- -->
+
+Directives:-
+---------------
+Jsp directives are messages for jsp engine.they donot produce output.they tell the engine what to do with rest of the jsp page.it is enclosed with <%@-------%> tag
+the three primary directives are:-
+1)page 
+2)include
+3)custom tag libraries
+
+1)page directive:-
+Found at the top of the jsp page.there are 11 attributes in this directive.
+
+1)info :-<%@ page info="this is a welcome page"%>
+to add summary about the page.
+
+2)language:-<%@ page language="java"%>
+to specify scripting langauge used in the page
+
+3)content type:-<%@ page contentType="text/html"%>
+this is used to indicate MIME type
+
+4)Import :-<%@ page import ="java.util.Date"%>
+it is used to extend java classes.
+
+5)Session :-<%@ page session="false"%>
+It is used to indicate JSP page participates in session management.
+
+6)Buffer :-<%@ page buffer="12kb"%>
+to control buffered output for a jsp page.
+
+7)AutoFlush :-<%@ page autoFlush="true"%>
+It means the output will automatically flush.
+
+8)isThreadSafe :-<%@ page isThreadSafe="false"%>
+it is capable to responding multiple requests.
+
+9)Error Page :-<%@ page errorPage="error.jsp"%>
+It is used to display an alternate page if error occurs.
+
+10)isErrorPage :-<%@page isErrorPage="true"%>
+It is a common jsp page for error.
+
+11)extends :-<%@page extends="com.student.result"%>
+it is used for super class used by jsp container used mainly for custom tag libraries.
+
+Include Directives:-
+-----------------------------
+It lets us to include files at the time the jsp page is translated into servlet.
+it treats the contents of the file to be included as if it were part of the original page.It include resources at runtime.
+<%@ include file="include.jsp"%>
+
+Custom tag libraries :-
+---------------------------------
+it is also called jsp tag extensions.It provides a way of encapsulating reusable functionality on jsp page.It has ability to generate dynamic content by using java code.
+
+Scripting element:-
+------------------------
+1)declaration :-to declare variable and method <% int i=0;%>
+2)scriptlets :-It contain the java code.
+3)expression tag:-It is used to retrive value <%=user%>
+4)comment tag:-used for comments.<!-- this is jsp comments--%>
+
+Action Tag:-
+-----------------
+1)<jsp :plugins>
+2)<jsp :include>
+3)<jsp :forward>
+4)<jsp :param>
+5)<jsp :useBean>
+6)<jsp :getProperty>
+7)<jsp :setProperty>
+
+
+Implicit object:-
+-----------------------
+1)out-- PrintWriter
+2)response-- HttpServletResponse
+3)request-- HttpServletRequest
+4)page-- this a jsp page scope
+5)config-- ServletConfig
+6)session-- HttpSession
+7)application-- ServletContext
+8)execption-- Exception
+9)pageContext - JspWriter
+----------------------------------------------
+Example-1
+---------------------
+
+
+
+<% out.println("<h1><font color='red'>welcome to jsp page");%>
+ <%
+        int a=100,b=20,sum;
+        sum=a+b;
+        out.println("sum of two number is"+sum);
+        %>
+<h1>declaration Tag</h1>
+        <%!int sum,a,b=20;%>         <!-- global declaration -->
+        
+<%
+        a=10;
+        sum=a+b;
+        out.println("sum of number is"+sum+"<br>");
+ %>
+-----------------------------------------------------------------------------------------
+Expression tag
+<% =5+7 %>
+ <h1>Expression Tag</h1>
+        <%! int a,b,sum;%>
+        <%
+        a=10;
+        b=20;
+        sum=a+b;
+        %>
+         <font color="red" size="8">The sum of <%=a%>,<%=b%> is<%=sum%>
+</font>
+
+-----------------------------------------------------------------------------------------------
+ page directive
+------------------------------------------------------
+First.html
+------------------------
+<h1>number validation</h1>
+        <form action="jsp6.jsp">
+            Age=<input type="text" name="n1">
+            <input type="submit" value="submit">
+       </form>
+-----------------------------------------------------------------------
+jsp6.jsp
+----------------------
+<%@page errorPage="error.jsp" %>
+<%!String age1;
+int age;
+%>
+<% age1=request.getParameter("n1");
+   age=Integer.parseInt(age1);
+   out.println("The age ="+age);
+%>
+--------------------------------------------------------
+error.jsp
+-------------------
+<%@page isErrorPage="false"%>  <!-- This is not a error page-->
+<%out.println("Enter only the number");%>
+
+--------------------------------------------------------
+jsp8.jsp
+-----------------------
+<a href="First.html">age</a>
+     <%! String age;
+        int age1;
+        %>
+        <%
+        try{
+            age=request.getParameter("n1");
+            age1=Integer.parseInt(age);
+            out.println("AGE="+age1);
+           }
+        catch(Exception e)
+        {
+          out.println("please enter only the number");
+          %>
+           <jsp:include page="jsp8.jsp"></jsp:include>
+<%           }       %>
+-----------------------------------------------------------------------------------------
+
+ <h1>for loop</h1>
+        <select name="number">
+            <%
+            for(int i=0;i<100;i++)
+            {
+            %>
+            <option value="<%=i%> "><%=i%> </option>
+            <%
+            }
+            %>
+        </select>
+
+
+------------------------------------------------------------------------
+<h1>for loop</h1>
+        <select name="number">
+            <%int i; 
+           
+            for(i=0;i<100;i++)
+            {
+            %>
+            
+            <option value="<%=i%> "><%=i%> </option>
+           <% } %>
+        </select>
+-------------------------------------------------------------------------
+
+action
+
+<%! int a=3,b=10; %>
+        <%
+            if(a<b)
+            {
+              out.println("yes");
+         %>
+        <jsp:include page="ll.jsp"></jsp:include>
+        <% 
+           }
+          else {
+             out.println("no");
+        %>
+<jsp:forward page="kk.jsp"></jsp:forward>
+    <%       }    %>
+  
+---------------------------------------------------------
+<html>
+<body bgcolor=cyan>
+<form action=test.jsp>
+<table>
+<tr><td>Enter your name<td><input type=text name=t1 size =20><tr>
+<tr><td>Enter your address<td><input type=text name=t2 size =20><tr>
+<tr><td>Enter your password<td><input type=password name=t3 size =20><tr>
+<tr><td>Enter your Qualification<td><select name=t4>
+<option>Mca</option>
+<option>Bca</option>
+<option>Mcom</option>
+<option>MTech</option>
+<option>Diploma</option>
+<option>Bsc</option>
+</select></td><tr>
+<tr><td><td><input type=submit value=submit></tr>
+</table></form></body></html>
+--------------------------------------------
 
 
 
