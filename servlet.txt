@@ -1086,6 +1086,14 @@ error.jsp
 <%out.println("Enter only the number");%>
 
 --------------------------------------------------------
+First.html
+------------------------
+<h1>number validation</h1>
+        <form action="jsp8.jsp">
+            Age=<input type="text" name="n1">
+            <input type="submit" value="submit">
+       </form>
+------------------------------------------------------------
 jsp8.jsp
 -----------------------
 <a href="First.html">age</a>
@@ -1102,7 +1110,7 @@ jsp8.jsp
         {
           out.println("please enter only the number");
           %>
-           <jsp:include page="jsp8.jsp"></jsp:include>
+           <jsp:include page="First.html"></jsp:include>
 <%           }       %>
 -----------------------------------------------------------------------------------------
 
