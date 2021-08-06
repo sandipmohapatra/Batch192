@@ -1,0 +1,280 @@
+Spring JDBC
+------------------------------------------------------------------
+Difference between JDBC and Spring JDBC
+------------------------------------------------------------------
+JDBC
+--------------------------------------------------------------------
+1)There will compile time Exception so we have to handle it.
+2)it gives SQL exception .it is inside java.sql package.
+3)closing of connection is required.(con.close();)
+4)preparedStatement is type(datatype) safe.
+example:-ps.setInt(1,"abc"); this will give error.
+5)select querry operation always it will return ResultSet.
+
+Spring JDBC
+---------------------------------------------------------------------------------
+1)There will runtime time Exception so we neednot to handle it.
+2)it gives DataAccess exception .it is inside Spring DAO.jar .
+3)closing of connection is not required.(con.close();)
+4)all the JDBCTemplate methods are type safe using Types class.
+5)generic select method for all type of select operation.
+
+
+Spring framework provides following approaches for JDBC database access:
+
+JdbcTemplate
+NamedParameterJdbcTemplate
+SimpleJdbcTemplate
+SimpleJdbcInsert and SimpleJdbcCall
+
+
+
+DataSource is a interface .It is implemented by 2 class.
+1)DriverManagerDataSource package in which it is contained is org.springframework.jdbc.datasource.*;(small scale)
+2)BasicDataSource package in which it is contained is org.apache.commons.dbcp.*;(large scale)
+
+
+Spring JdbcTemplate is a powerful mechanism to connect to the database and execute SQL queries. It internally uses JDBC api, but eliminates a lot of problems of JDBC API.
+
+JdbcTemplate
+It is the central class in the Spring JDBC support classes. It takes care of creation and release of resources such as creating and closing of connection object etc. So it will not lead to any problem if you forget to close the connection.
+
+It handles the exception and provides the informative exception messages by the help of excepion classes defined in the org.springframework.dao package.
+
+We can perform all the database operations by the help of JdbcTemplate class such as insertion, updation, deletion and retrieval of the data from the database.
+
+The DriverManagerDataSource is used to contain the information about the database such as driver class name, connnection URL, username and password.
+
+There are  property named datasource in the JdbcTemplate class of DriverManagerDataSource type. So, we need to provide the reference of DriverManagerDataSource object in the JdbcTemplate class for the datasource property.
+
+Methds of  JdbcTemplate class:- 
+1)public int update(String query):-is used to insert, update and delete records.
+2)public void execute(String query):-is used to execute DDL query.
+3)public T query(String sql, ResultSetExtractor rse):-is used to fetch records using ResultSetExtractor.
+4)public List query(String sql, RowMapper rse):-is used to fetch records using RowMapper.
+
+
+
+Jdbctemplate class has methods
+1)execute()
+2)update()
+query methods() :-
+3)queryForInt(sql)
+4)queryForFloat(sql)
+5)queryForDouble(sql);
+6)queryForObject(sql);
+7)queryForMap(sql);
+8)queryForList(sql);
+-------------------------------------------------------
+We can execute parameterized query using Spring JdbcTemplate by the help of execute() method of JdbcTemplate class. To use parameterized query, we pass the instance of PreparedStatementCallback in the execute method.
+
+Syntax of execute method to use parameterized query
+public T execute(String sql,PreparedStatementCallback<T>);  
+
+Method of PreparedStatementCallback interface
+It has only one method doInPreparedStatement. Syntax of the method is given below:
+
+public T doInPreparedStatement(PreparedStatement ps)throws SQLException, DataAccessException  
+-----------------------------------------------------------------------------------------------------------------------
+
+ResultSetExtractor Interface
+-------------------------------------------------
+ResultSetExtractor interface can be used to fetch records from the database. It accepts a ResultSet and returns the list.
+
+Method of ResultSetExtractor interface
+
+It defines only one method extractData that accepts ResultSet instance as a parameter. Syntax of the method is given below:
+
+public T extractData(ResultSet rs)throws SQLException,DataAccessException  
+
+RowMapper Interface
+----------------------------------------
+RowMapper interface allows to map a row of the relations with the instance of user-defined class. It iterates the ResultSet internally and adds it into the collection. So we don't need to write a lot of code to fetch the records as ResultSetExtractor.
+
+Advantage of RowMapper over ResultSetExtractor
+
+RowMapper saves a lot of code becuase it internally adds the data of ResultSet into the collection.
+
+Method of RowMapper interface
+---------------------------------------------------
+It defines only one method mapRow that accepts ResultSet instance and int as the parameter list. Syntax of the method is given below:
+
+public T mapRow(ResultSet rs, int rowNumber)throws SQLException  
+
+--------------------------
+example:-
+Example of Spring JdbcTemplate
+
+1)create table
+------------------------------------------
+create table employee(  
+id number(10),  
+name varchar2(30),  
+salary number(10)  
+);  
+-------------------------------------------------------------
+Employee.java
+This class contains 3 properties with constructors and setter and getters.
+
+------------------------------------------------------------------------------------
+  
+public class Employee {  
+private int id;  
+private String name;  
+private float salary;  
+//no-arg and parameterized constructors  
+//getters and setters  
+}  
+ 
+ -------------------------------------------------------------------------
+public class EmployeeDao 
+{  
+private JdbcTemplate jdbcTemplate;  
+  
+public void setJdbcTemplate(JdbcTemplate jdbcTemplate) {  
+    this.jdbcTemplate = jdbcTemplate;  
+}  
+  
+public int saveEmployee(Employee e)
+{  
+    String query="insert into employee values(  
+    '"+e.getId()+"','"+e.getName()+"','"+e.getSalary()+"')";  
+    return jdbcTemplate.update(query);  
+}  
+ 
+ 
+  
+}  
+
+------------------------------------------------------------------------------------------------------------------------
+applicationContext.xml
+ 
+ in the EmployeeDao class, we are passing it by the setter method but you can use constructor also.
+
+ 
+  
+<bean id="ds" class="org.springframework.jdbc.datasource.DriverManagerDataSource">  
+<property name="driverClassName" value="oracle.jdbc.driver.OracleDriver" />  
+<property name="url" value="jdbc:oracle:thin:@localhost:1521:xe" />  
+<property name="username" value="system" />  
+<property name="password" value="oracle" />  
+</bean>  
+  
+<bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">  
+<property name="dataSource" ref="ds"></property>  
+</bean>  
+  
+<bean id="edao" class="com.javatpoint.EmployeeDao">  
+<property name="jdbcTemplate" ref="jdbcTemplate"></property>  
+</bean>  
+  
+</beans>  
+
+---------------------------------------------------------------------------------------------------------------------
+public class Test {  
+  
+public static void main(String[] args) {  
+    ApplicationContext ctx=new ClassPathXmlApplicationContext("applicationContext.xml");  
+      
+    EmployeeDao dao=(EmployeeDao)ctx.getBean("edao");  
+    int status=dao.saveEmployee(new Employee(102,"Amit",35000));  
+    System.out.println(status);  
+          
+}
+
+-------------------------------------------------------------------------------------------------------------------------
+example :-
+PreparedStatementCallback (interface)
+
+We can execute parameterized query using Spring JdbcTemplate by the help of execute() method of JdbcTemplate class. To use parameterized query, we pass the instance of PreparedStatementCallback in the execute method.
+
+Syntax of execute method to use parameterized query
+
+public T execute(String sql,PreparedStatementCallback<T>);  
+
+PreparedStatementCallback interface
+It processes the input parameters and output results. In such case, you don't need to care about single and double quotes.
+
+
+It has only one method doInPreparedStatement. 
+-----------------------------------------------------------------------------
+public T doInPreparedStatement(PreparedStatement ps)throws SQLException, DataAccessException 
+
+----------------------------------------------------------------------------------------------------------------
+public Boolean saveEmployeeByPreparedStatement(final Employee e){  
+    String query="insert into employee values(?,?,?)";  
+    return jdbcTemplate.execute(query,new PreparedStatementCallback<Boolean>(){  
+    @Override  
+    public Boolean doInPreparedStatement(PreparedStatement ps)  
+            throws SQLException, DataAccessException {  
+              
+        ps.setInt(1,e.getId());  
+        ps.setString(2,e.getName());  
+        ps.setFloat(3,e.getSalary());  
+              
+        return ps.execute();  
+              
+    }  
+    });  
+-------------------------------------------------------------------------------------------------------------------------
+example:-
+ResultSetExtractor Interface
+-------------------------------------------------------------------------------------------------------------------------
+ResultSetExtractor interface can be used to fetch records from the database. 
+It accepts a ResultSet and returns the list.
+Method of ResultSetExtractor interface It defines only one method extractData
+-------------------------------------------------------------------------------------------------------------------------
+ that accepts ResultSet instance as a parameter. 
+
+public T extractData(ResultSet rs)throws SQLException,DataAccessException  
+-------------------------------------------------------------------------------------------------------------------------
+public List<Employee> getAllEmployees()
+{  
+ return template.query("select * from employee",new ResultSetExtractor<List<Employee>>()
+		 {  
+    @Override  
+     public List<Employee> extractData(ResultSet rs) throws SQLException, DataAccessException {  
+      
+        List<Employee> list=new ArrayList<Employee>();  
+        while(rs.next()){  
+        Employee e=new Employee();  
+        e.setId(rs.getInt(1));  
+        e.setName(rs.getString(2));  
+        e.setSalary(rs.getInt(3));  
+        list.add(e);  
+        }  
+        return list;  
+        }  
+    });  
+------------------------------------------------------------------------------------------------------------------------
+example:-
+
+We can use RowMapper interface to fetch the records from the database using query() method of JdbcTemplate class. In the execute of we need to pass the instance of RowMapper now.
+
+Syntax of query method using RowMapper
+
+public T query(String sql,RowMapper<T> rm)  
+ 
+
+Method of RowMapper interface
+
+It defines only one method mapRow that accepts ResultSet instance and int as the parameter list. Syntax of the method is given below:
+
+public T mapRow(ResultSet rs, int rowNumber)throws SQLException  
+-------------------------------------------------------------------------------------------------------------------------
+public List<Employee> getAllEmployeesRowMapper(){  
+ return template.query("select * from employee",new RowMapper<Employee>()
+		 {  
+    @Override  
+    public Employee mapRow(ResultSet rs, int rownumber) throws SQLException {  
+        Employee e=new Employee();  
+        e.setId(rs.getInt(1));  
+        e.setName(rs.getString(2));  
+        e.setSalary(rs.getInt(3));  
+     //   System.out.println(rownumber);
+        return e;  
+    }  
+    });  
+
+
+
