@@ -10,7 +10,6 @@ example :-
 5)feedback
 6)provide contact details
 ---------------------------------------------------------------------------
-
 1)e-music system
 ----------------------------------
 Team
@@ -20,9 +19,11 @@ Aakaash Kumaran N A
 Aayush Anshu
 Akash Kumar mahapatra
 Akash Srivastava
+-----------------------------------
 -----------------------------------------------------------
 2)Gim management system
 Team
+------------
 Animesh Mukherjee
 Ankesh Yadav
 Avinash Sinha
@@ -31,14 +32,16 @@ Chandana Navuluri
 -------------------------------------------------
 3)Online Doctor consulting
 Team
+---------
 Deepak Kumar
 Diksant Paul
 Gaurav Mishra
-Govarthini R
+Vicky kumar
 Gurmeet Chahal
 ------------------------------------------------
 4)travel and tour
 Team
+-------------------
 Yaswanth 
 Kalki Venkateshpachigolla
 Madhav Khandelwal
@@ -47,6 +50,7 @@ Manubolu Vamsi
 ---------------------------------
 5)Hotel management
 Team
+-------
 Moodavath Venkatesh
 Naveen Sharan Patel
 Naveen Viswas G
@@ -66,7 +70,7 @@ Priyanka Kumari
 Team
 -----------------
 Pushpak Kumar
-Ramya S
+trisha sharma
 Rohanf Y J
 Roosafeed K Koya
 Roshan Patel
@@ -85,18 +89,18 @@ Team
 --------------
 Sowrav Singh
 Srungarapu Saikrishna
-Subakeerthana Palanivelu
+sweta singh
 Sudhakar Mishra
 susmita sarkar
 ----------------------------------------------------
 10)online cinema ticket
 Team
 -------------
-sweta singh
-trisha sharma
-Vicky kumar
+Ramya S
+Govarthini R
+Subakeerthana Palanivelu
 Vikash S
-Hariharanrp
+Hariharan rp
 ---------------------------------------------------
 
 
