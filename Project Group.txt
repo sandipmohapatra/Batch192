@@ -1,3 +1,16 @@
+1)create an abstract for the project
+2)tables design
+3)forms
+---------------------------------------------------------------
+example :-
+1)customer registration page
+2)login page
+3)price list of CD/DVD etc.
+4)setect CD and provide address to deliver
+5)feedback
+6)provide contact details
+---------------------------------------------------------------------------
+
 1)e-music system
 ----------------------------------
 Team
@@ -7,13 +20,6 @@ Aakaash Kumaran N A
 Aayush Anshu
 Akash Kumar mahapatra
 Akash Srivastava
------------------------------------
-1)customer registration page
-2)login page
-3)price list of CD/DVD etc.
-4)setect CD and provide address to deliver
-5)feedback
-6)provide contact details
 -----------------------------------------------------------
 2)Gim management system
 Team
