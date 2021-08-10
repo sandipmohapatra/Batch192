@@ -1,0 +1,104 @@
+1)e-music system
+----------------------------------
+Team
+---------------
+A B Rahul
+Aakaash Kumaran N A
+Aayush Anshu
+Akash Kumar mahapatra
+Akash Srivastava
+-----------------------------------
+1)customer registration page
+2)login page
+3)price list of CD/DVD etc.
+4)setect CD and provide address to deliver
+5)feedback
+6)provide contact details
+-----------------------------------------------------------
+2)Gim management system
+Team
+Animesh Mukherjee
+Ankesh Yadav
+Avinash Sinha
+Basireddy Durga Prasad Reddy
+Chandana Navuluri
+-------------------------------------------------
+3)Online Doctor consulting
+Team
+Deepak Kumar
+Diksant Paul
+Gaurav Mishra
+Govarthini R
+Gurmeet Chahal
+------------------------------------------------
+4)travel and tour
+Team
+Hariharanrp
+Kalki Venkateshpachigolla
+Madhav Khandelwal
+Manish Kumar Ramashankar Yadav
+Manubolu Vamsi
+---------------------------------
+5)Hotel management
+Team
+Moodavath Venkatesh
+Naveen Sharan Patel
+Naveen Viswas G
+Nikhil Agarwal
+Nilesh Kumar Thakur
+------------------------------------------
+6)coid care center
+Team
+-------------------
+Nishchal Bhuria
+P Sunil
+Pradyum Raj
+Prerna Sharma
+Priyanka Kumari
+-----------------------------------
+7)online shopping
+Team
+-----------------
+Pushpak Kumar
+Ramya S
+Rohanf Y J
+Roosafeed K Koya
+Roshan Patel
+--------------------------------
+8)Online Banking
+Team
+-------------
+Sankala Harsha Vardhan
+Shambhavi Shashwati
+Shanmukh Appana
+Shivam Kumar
+Shivam Mishra
+-----------------------------
+9)corporate transport
+Team
+--------------
+Sowrav Singh
+Srungarapu Saikrishna
+Subakeerthana Palanivelu
+Sudhakar Mishra
+susmita sarkar
+----------------------------------------------------
+10)online cinema ticket
+Team
+-------------
+sweta singh
+trisha sharma
+Vicky kumar
+Vikash S
+Yaswanth 
+---------------------------------------------------
+
+
+
+
+
+
+
+
+
+
