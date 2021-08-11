@@ -1,0 +1,135 @@
+Aspect oriented programing:-
+--------------------------------------------------------
+1. What is Spring AOP?
+Spring AOP enables Aspect-Oriented Programming in spring applications. In AOP, aspects enable the modularization of concerns such as transaction management, logging or security that cut across multiple types and objects (often termed crosscutting concerns).
+
+AOP provides the way to dynamically add the cross-cutting concern before, after or around the actual logic using simple pluggable configurations. It makes easy to maintain code in the present and future as well. You can add/remove concerns without recompiling complete sourcecode simply by changing configuration files (if you are applying aspects uing XML configuration).
+
+2. What is advice, joinpoint or pointcut?
+An important term in AOP is advice. It is the action taken by an aspect at a particular join-point.
+Joinpoint is a point of execution of the program, such as the execution of a method or the handling of an exception. In Spring AOP, a joinpoint always represents a method execution.
+Pointcut is a predicate or expression that matches join points.
+Advice is associated with a pointcut expression and runs at any join point matched by the pointcut.
+Spring uses the AspectJ pointcut expression language by default.
+
+3.Types of AOP Advices
+There are five types of advice in spring AOP.
+
+Before advice: Advice that executes before a join point, but which does not have the ability to prevent execution flow proceeding to the join point (unless it throws an exception).
+After returning advice: Advice to be executed after a join point completes normally: for example, if a method returns without throwing an exception.
+After throwing advice: Advice to be executed if a method exits by throwing an exception.
+After advice: Advice to be executed regardless of the means by which a join point exits (normal or exceptional return).
+Around advice: Advice that surrounds a join point such as a method invocation. This is the most powerful kind of advice. Around advice can perform custom behavior before and after the method invocation. It is also responsible for choosing whether to proceed to the join point or to shortcut the advised method execution by returning its own return value or throwing an exception.
+-----------------------------------------------------------------------------------------------------------------------
+AOP concepts and terminologies are as follows:
+
+Join point
+Advice
+Pointcut
+Introduction
+Target Object
+Aspect
+Interceptor
+AOP Proxy
+Weaving
+
+Join point
+Join point is any point in your program such as method execution, exception handling, field access etc. Spring supports only method execution join point.
+
+Advice
+Advice represents an action taken by an aspect at a particular join point. There are different types of advices:
+
+Before Advice: it executes before a join point.
+After Returning Advice: it executes after a joint point completes normally.
+After Throwing Advice: it executes if method exits by throwing an exception.
+After (finally) Advice: it executes after a join point regardless of join point exit whether normally or exceptional return.
+Around Advice: It executes before and after a join point.
+
+Pointcut
+It is an expression language of AOP that matches join points.
+
+Target Object
+It is the object i.e. being advised by one or more aspects. It is also known as proxied object in spring because Spring AOP is implemented using runtime proxies.
+
+Aspect
+It is a class that contains advices, joinpoints etc.
+
+Interceptor
+It is an aspect that contains only one advice.
+
+AOP Proxy
+It is used to implement aspect contracts, created by AOP framework. It will be a JDK dynamic proxy or CGLIB proxy in spring framework.
+
+Weaving
+It is the process of linking aspect with other application types or objects to create an advised object. Weaving can be done at compile time, load time or runtime. Spring AOP performs weaving at runtime.
+
+Aspect means service.we will add aspect to bussiness.
+Advice is service provider
+PointCut -point or condition to execute the service/Aspect for our bussiness methods.
+
+
+
+example:- bank
+1)deposite-Transaction before and after
+2)withdraw-Transaction before and after
+3)findBal-No Transaction
+4)calculateInterest-No Transaction
+
+Advicer - pointcut with advice combination
+(pointcut+advice)
+
+proxy is a weaver
+ proxy <------service + bussiness
+finally proxy will give proxy object.
+
+there are 3 approch of AOP
+1)programatic
+2)declarative(XML)
+3)@Anotation
+
+programatic Approch we have 4 advice
+1)Method before Advice
+2)Method after Advice
+3)Method Intersepter(before and after)
+4)Throws Advice
+
+
+controller <--------AOP<-------Service +Bussiness
+
+class Bank
+{
+int amt=5000;
+String name="ABC";
+public int deposite(int amt,String name)
+{
+if(name.equals("ABC"))
+{
+this.amt=this.amt+deposite;
+return this.amt;
+}
+else
+{
+return 0;
+}}}
+
+---------------------------------
+class Logbefore implements MethodBeforeAdvice
+{
+public void before()
+{}
+}
+-----------------------------
+main class:-
+{
+ProxyFactoryBean pfb=new ProxyFactoryBean();
+pfb.setTarget();
+pfb.setInterceptorName(String[] name);
+Bank b=new Bank();<-----Target
+Logbefore l=new Logbefore();<----Advice
+Bank proxy=pfb.getObject();//object will return to the bank class.
+proxy.deposite(1000,102);
+s.o.p(amt)
+}
+ 
+
+
