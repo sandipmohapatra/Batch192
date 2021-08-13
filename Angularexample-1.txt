@@ -1,0 +1,78 @@
+import { Component } from '@angular/core';
+@Component({
+  selector: 'my-app',
+  template: `
+  <p>Hello my name is {{name}}</p> 
+  <p>Hello my email is {{email}}</p>
+  <p>Hello my address is {{address.street}}  {{address.loc}} {{address.state}} {{address.city}}</p>
+   
+  <p><Button (click)="sayName()">Say my details</Button></p>
+  <p><Button (click)="Details()">Say my details agian</Button></p> 
+
+  <p><Button (click)="toggleHobbies()">{{showHobbies ? "Hide Hobbies" : "show  hobbies"}}</Button></p> 
+
+  <div *ngIf="showHobbies"> 
+
+  <h3>My Hobbies are </h3>{{hobbies}}
+  <h3>My Daily Foods are </h3>
+  <ul>
+<li *ngFor="let food of foods ; let i = index" >
+{{food}} <button (click)="deleteFood(i)">Delete</button>
+</li>
+  </ul>
+</div>  `,
+})
+export class AppComponent  
+{
+  name:string;
+  email:string;
+  address:address;
+  hobbies:string[];
+  foods:string[];
+  showHobbies: boolean;
+  constructor()
+  {
+    this.name="vinit";
+    this.email="vinit@gmail.com";
+    this.address=
+    {
+      street:'M G ROAD',
+      loc:'chennei central',
+      state:'tamilnadu',
+      city:'chennei'
+    }
+    this.hobbies=['music','cricket','football','movies','sports'];
+    this.foods=['rice and dal','Biryani','noodles','sweet','ice-cream'];
+    this.showHobbies=false;
+  }
+  sayName()
+  {
+    console.log("my name is ",this.name);
+    console.log("my email is ",this.email);
+    console.log("my address is ",this.address);
+  }
+  Details()
+  {
+    this.sayName();
+  } 
+  toggleHobbies()
+  {
+   if(this.showHobbies == true)
+   {
+   this.showHobbies = false;
+  } else  {
+this.showHobbies = true;
+  }
+  }
+  deleteFood(i:number)
+  {
+    this.foods.splice(i, 1);
+  }
+}
+interface address
+{
+  street:string;
+  loc:string;
+  state:string;
+  city:string;
+}
