@@ -69,6 +69,7 @@ this.showHobbies = true;
     this.foods.splice(i, 1);
   }
 }
+
 interface address
 {
   street:string;
