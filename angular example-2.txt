@@ -1,0 +1,251 @@
+Routing in Angular
+-------------------------------
+1)Routing means navigating to different modules.
+2)Routing can load new contents into page without reloading the complete page.
+3)SPA and Progressive web application require routing.
+4)users will stay on one page and get access to everything on to the page.
+example :- gmail
+5)angular is used for SPA development .you can see by the change of URL.
+------------------------------------------------------------
+Angular Routing Library
+-------------------------------
+1)@angular/router .
+It is a package that provides configuration for routing 
+a)RouterModule :- It imports the routes and exports the routes into a route table.
+b)Routes:-the routes object is responsible for configuring routes to the application.
+
+example :- 
+import {Routes,RouterModule} from '@angular/router';
+import {NgModule} from '@angular/core';
+-----------------------------------------------------------------------------------
+app.module.ts
+----------------------------
+@NgModule({
+Import:[RouterModule.forRoot(routes)],
+Exports:[RouterModule]
+})
+-----------------------------------------------------------------------------
+Path :-it is the request path used to access any resource into the application.
+* becoz we will have the modules at different folders.
+----------------------------------------------------------------------------------------
+2)<a routerLink="pathname">Link Text</a>
+
+3)<router-outlet> :- the target location where you want to render the component or module.
+There will be a single <router-outlet> so every page will use this.
+
+--------------------------------------------------------------------------------------------------
+Steps to create a Routing 
+------------------------------------
+step -1) 
+c:\sandip\desktop\flipcard\src\app>
+ng g c Product
+ng g c Inventory
+ng g c Login
+*
+Product.component.ts,Product.component.html,Product.component.css will be created.
+and there will be updation in app.module.ts 
+-----------------------------------------------------------------------------------------------------------------
+step-2
+-------------
+app.component.ts
+---------------------------
+import {Component} from '@angular/core';
+@Component ({
+    selector :'my-app',
+    template:` MENU <ul>
+    <li> <a [routerLink]="['/Product']">Product</a></li>
+    <li> <a [routerLink]="['/Inventory']">Inventory</a></li>
+    <li> <a [routerLink]="['/Login']">Login</a></li>
+    </ul><hr><hr>
+    <router-outlet> </router-outlet> `
+})
+export class AppComponent
+{}
+---------------------------------------------------------------------------------------
+step-3
+----------
+change in index.html
+<my-app></my-app>
+--------------------------------------------------------
+step-4
+-------------
+Product.component.ts
+-------------------------------
+import { Component } from '@angular/core';
+@Component ({
+selector: 'my-app',
+template: `<form>
+<table>
+<tr><td><label>Product ID:</label><td>
+<input type="text" name="pid" size=20 /><br /></tr>
+
+<tr><td><label>Product Name:</label><td>
+<input type="text" name="pname" size=20 /><br /></tr>
+<tr><td><label>Product Unit:</label><td>
+
+<input type="text" name="punit" size=20 /><br /></tr>
+<tr><td><label>Product Price:</label><td>
+
+<input type="text" name="pprice" size=20 /><br /></tr>
+<tr><td><td><input type="submit" value="submit" /><br /></tr>
+</table>
+</form>`,
+})
+export class Appproduct {
+}
+
+---------------------------------
+step-5
+-------------
+Inventory.component.ts
+-------------------------------
+import { Component } from '@angular/core';
+@Component ({
+selector: 'my-app',
+template: `<form>
+<table>
+<tr><td><label>Inventory ID:</label><td>
+<input type="text" name="pid" size=20 /><br /></tr>
+<tr><td><label>Inventory Name:</label><td>
+<input type="text" name="pname" size=20 /><br /></tr>
+<tr><td><label>Inventory Unit:</label><td>
+<input type="text" name="punit" size=20 /><br /></tr>
+<tr><td><label>Inventory Price:</label><td>
+<input type="text" name="pprice" size=20 /><br /></tr>
+<tr><td><td><input type="submit" value="submit" /><br /></tr>
+</table>
+</form>` 
+})
+export class AppInventory {
+}
+
+---------------------------------
+step-6
+-------------
+Login.component.ts
+-------------------------------
+import { Component } from '@angular/core';
+
+@Component({
+  selector: 'app-login',
+  templateUrl:'login.component.html',
+  styleUrls:['login.component.css']
+})
+export class LoginComponent
+{
+    title ='User Login';
+}
+------------------------------------------------------
+login.component.html
+-------------------------------------
+<div class="form-login">
+<h4>{{title}}</h4>
+<dl>
+    <dt>User Name</dt>
+    <dd><input type="text"></dd>
+    <dt>Password</dt>
+    <dd><input type="Password"></dd>
+</dl>
+<button>Login</button>
+</div>
+-----------------------------------
+login.component.css
+-------------------------------------
+.form-login
+{align-items: center;
+    width:300px;
+    margin:auto;
+    align-items: center;
+    justify-content: center;
+    
+}
+button
+{
+    align-items: center;  
+background-color: darkviolet;
+color: white;
+}
+---------------------------------------------------
+step-7
+---------
+app.module.ts
+----------------------
+import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from '@angular/core';
+import { AppRouting } from './app.routing';
+import { AppRoutingModule } from './app-routing.module';
+import { AppComponent } from './app.component';
+import { LoginComponent } from './login/login.component';
+import { TestComponent } from './test/test.component';
+import { AppInventory } from './inventory/inventory.component';
+import { Appproduct } from './product/product.component';
+import { RouterModule, Routes } from '@angular/router';
+
+const appRoutes: Routes = [
+  { path: 'Product', component: Appproduct },
+  { path: 'Inventory', component: AppInventory },
+  { path: 'Login', component: LoginComponent },
+  ];
+
+@NgModule({
+  declarations: [AppComponent,LoginComponent,TestComponent,
+    AppComponent, Appproduct, AppRouting],
+  imports: [BrowserModule,AppRoutingModule,RouterModule.forRoot(appRoutes)],
+  providers: [],
+  bootstrap: [AppComponent]  <------change the name to AppRouting
+})
+export class AppModule { }
+-----------------------------------------Second Program-----------------------------
+app.routing.ts
+----------------------
+import { Component, OnInit } from '@angular/core';
+
+@Component({
+  selector: 'app-rout',
+  templateUrl: './app.routing.html',
+  styleUrls: ['./app.component.css']
+})
+export class AppRouting{
+}
+
+-------------------------------------------------------------------
+app.routing.html
+-----------------------------
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div class="container">
+
+<div style="padding:5px">
+    <ul class="nav nav-tabs">
+        <li routerLinkActive="active">
+            <a routerLink="Product">Products</a>
+        </li>
+        <li routerLinkActive="active">
+            <a routerLink="Inventory">Inventory</a>
+        </li>
+        <li routerLinkActive="active">
+            <a routerLink="Login">Login</a>
+        </li>
+    </ul>
+    <br/>
+    <router-outlet> </router-outlet>
+</div></div>
+</body>
+</html>
+
+------------------------------------------------------
+app.component.css
+---------------------------
+h1{
+    color:red;
+}
+------------------------------------------
